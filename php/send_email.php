@@ -22,10 +22,17 @@ function send_mail(){
 		$quickRating = $quickRatingPercent * $averageSalesWeek;
 		$annualVIPsignups = $quickRating * $vipPercentile * 52;
 		$additionAnnualSales = $annualVIPsignups * $avg_check * $avgTableSize * $vipEngagment * $additionVisits;
+		$additionMonthlySales = $additionAnnualSales / 12;
+		$repeatCustomers = $annualVIPsignups * $vipEngagment;
+		$roi = $additionAnnualSales / ($driveSubCost * 12);
 
 		$subject = 'DriveCX ROI Report for ' . $f_name . " " . $l_name;
-		$message = 'average sales per week = ' .  . "\r\n";
-		$message .= 'Quick Ratings = ' . $avg_custNo . "\r\n";
+		$message .= 'average sales per week = ' . $averageSalesWeek . "\r\n";
+		$message .= 'Quick Ratings = ' . $quickRating . "\r\n";
+		$message .= 'Annual addition Customers = ' . $annualVIPsignups . "\r\n";
+		$message .= 'Additional sales = ' . $additionAnnualSales . "\r\n";
+		$message .= 'Loyal Customers = ' . $repeatCustomers . "\r\n";
+		$message .= 'ROI rating = ' . $roi . "\r\n";
 		$message .= 'firstname = ' . $f_name . "\r\n";
 		$message .= 'lastname = ' . $l_name . "\r\n";
 		$message .= 'email = ' . $email . "\r\n";
