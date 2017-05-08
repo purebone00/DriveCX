@@ -20,7 +20,7 @@ function send_mail(){
 		$companyName = $_POST["cf-companyName"];
 
 		$averageSalesWeek = $avg_check * $avg_custNo;
-		$quickRating = $quickRatingPercent * $averageSalesWeek;
+		$quickRating = ($quickRatingPercent * $avg_custNo) / $avgTableSize;
 		$annualVIPsignups = $quickRating * $vipPercentile * 52;
 		$additionAnnualSales = $annualVIPsignups * $avg_check * $avgTableSize * $vipEngagment * $additionVisits;
 		$additionMonthlySales = $additionAnnualSales / 12;
