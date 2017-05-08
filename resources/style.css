@@ -12,8 +12,6 @@ body, html {
     background-size: cover;
     background-attachment:fixed;
 	color: white !important;
-
-
 }
 
 .toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 20px; }
