@@ -10,6 +10,7 @@ function send_mail(){
 		$rtrPercentile = 0.25;
 		$vipEngagment = 0.25;
 		$additionVisits = 22;
+		$avgTableSize = 3;
 
 		$avg_check    = $_POST["cf-averageCheck"];
 		$avg_custNo    = $_POST["cf-averageCustNo"];
