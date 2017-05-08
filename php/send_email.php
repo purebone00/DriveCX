@@ -2,15 +2,17 @@
 //this function sends the email
 function send_mail(){
 
+		$fullService = $_POST["cf-full-service"];
+
 		$driveSubCost = 199;
-		$quickRatingPercent = 0.67;
-		$completeSurveyPercent = 0.38;
-		$vipPercentile = 0.22;
+		$quickRatingPercent = ($fullService ? 0.5 : 0.67);
+		$completeSurveyPercent = ($fullService ? 0.3 : 0.38);
+		$vipPercentile = ($fullService ? 0.06 : 0.22);
 		$offersSentPercentile = 0.29;
-		$rtrPercentile = 0.25;
+		$rtrPercentile = ($fullService ? 0.05 : 0.25);
 		$vipEngagment = 0.25;
-		$additionVisits = 22;
-		$avgTableSize = 3;
+		$additionVisits = ($fullService ? 4 : 12);
+		$avgTableSize = ($fullService ? 3 : 1);
 
 		$avg_check    = $_POST["cf-averageCheck"];
 		$avg_custNo    = $_POST["cf-averageCustNo"];
@@ -22,7 +24,8 @@ function send_mail(){
 		$averageSalesWeek = $avg_check * $avg_custNo;
 		$quickRating = ($quickRatingPercent * $avg_custNo) / $avgTableSize;
 		$annualVIPsignups = $quickRating * $vipPercentile * 52;
-		$additionAnnualSales = $annualVIPsignups * $avg_check * $avgTableSize * $vipEngagment * $additionVisits;
+		$annualRTRoffers = $quickRating * $completeSurveyPercent * ($fullService ? 1 : $offersSentPercentile) * $rtrPercentile * 52;
+		$additionAnnualSales = ($annualVIPsignups * $avg_check * $avgTableSize * $vipEngagment * $additionVisits);
 		$additionMonthlySales = $additionAnnualSales / 12;
 		$repeatCustomers = $annualVIPsignups * $vipEngagment;
 		$roi = $additionAnnualSales / ($driveSubCost * 12);
