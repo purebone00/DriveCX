@@ -83,6 +83,8 @@ function send_mail(){
 		$html = substr($curl_response, $image_start + 8, $image_end);
 		$html = str_replace("\\n", "\n", $html);
 		$html = str_replace("\\t", "\t", $html);
+		$html = str_replace("\\\"", "\"", $html);
+
 	}
 
 
@@ -134,17 +136,20 @@ function send_mail(){
 	//$report = "<html><head><H1>Hello</H1><body><img src=\"" . $image_url ."\"></head></body></html>";
 
 
-	$headers = "From: $name <$email>"
-	//. "\r\n" . 'Reply-To: johndoe@email.com'
-	. "\r\n". 'Content-Type: text/html'
-	//. "\r\n". 'X-Mailer: PHP/'
-	//. phpversion()
-	;
+	$headers = 'Content-Type: text/html; charset=iso-8859-1' . "\r\n";
 
 	$to = $email;
 
-	echo "$html";
+	// If email has been process for sending, display a success message
+	if ( mail( $to, $subject, $html , $headers) ) {
+		echo '<div>';
+		echo '<p>A copy of your report has been sent to your email address '. $email.'</p>';
+		echo '</div>';
+	} else {
+		echo 'An unexpected error occurred';
+	}
 
+	send_deal($email);
 
 }
 
