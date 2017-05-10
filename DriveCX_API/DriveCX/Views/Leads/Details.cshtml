@@ -1,0 +1,60 @@
+@model DriveCX.Models.Lead
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Lead</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fullService)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fullService)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.avg_custNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.avg_custNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.avg_check)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.avg_check)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.f_name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.f_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.l_name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.l_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.companyName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.companyName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
