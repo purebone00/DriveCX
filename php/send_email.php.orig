@@ -19,6 +19,8 @@ function send_mail(){
 
 	$fullService = $_POST["cf-full-service"];
 
+	$fullService = $_POST["cf-full-service"];
+
 	$driveSubCost = 199;
 	$quickRatingPercent = ($fullService ? 0.5 : 0.67);
 	$completeSurveyPercent = ($fullService ? 0.3 : 0.38);
@@ -43,8 +45,7 @@ function send_mail(){
 	$additionAnnualSales = ($annualVIPsignups * $avg_check * $avgTableSize * $vipEngagment * $additionVisits);
 	$additionMonthlySales = $additionAnnualSales / 12;
 	$repeatCustomers = $annualVIPsignups * $vipEngagment;
-	$calc = $additionAnnualSales / ($driveSubCost * 12);
-	$roi = ceil ( floatval($calc) );
+	$roi = $additionAnnualSales / ($driveSubCost * 12);
 
 
 	$name = 'DriveCX';
@@ -75,11 +76,11 @@ function send_mail(){
 
 	//Set curl header for API call
 	curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-            //'Accept: application/vnd.api+json',
-            //'Content-Type: application/vnd.api+json',
-			'Content-Type: application/json',
-            'Authorization: apikey ' . $api_key
-    ));
+		//'Accept: application/vnd.api+json',
+		//'Content-Type: application/vnd.api+json',
+		'Content-Type: application/json',
+		'Authorization: apikey ' . $api_key
+	));
 
 	curl_setopt($curl, CURLOPT_HEADER, true);
 
@@ -129,7 +130,11 @@ function send_mail(){
 	}
 
 
+<<<<<<< HEAD
+	$message .= 'average sales per week = ' . $averageSalesWeek . "\r\n";
+=======
 	$message = 'average sales per week = ' . $averageSalesWeek . "\r\n";
+>>>>>>> master2
 	$message .= 'Quick Ratings = ' . $quickRating . "\r\n";
 	$message .= 'Annual addition Customers = ' . $annualVIPsignups . "\r\n";
 	$message .= 'Additional sales = ' . $additionAnnualSales . "\r\n";
@@ -140,13 +145,13 @@ function send_mail(){
 	$message .= 'email = ' . $email . "\r\n";
 	$message .= 'company name = ' . $companyName . "\r\n";
 
-
+	
 	$headers = 'Content-Type: text/html; charset=iso-8859-1' . "\r\n";
 
 	$to = $email;
 
 	// If email has been process for sending, display a success message
-	if ( mail( $to, $subject, $html , $headers) ) {
+	if ( mail( $to, $subject, $message , $headers) ) {
 		echo '<div>';
 		echo '<p>A copy of your report has been sent to your email address '. $email.'</p>';
 		echo '</div>';
