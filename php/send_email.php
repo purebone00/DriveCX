@@ -17,20 +17,17 @@ $html;
 //Get's mail chimp template by $template_id
 function send_mail(){
 
-
+	$fullService = $_POST["cf-full-service"];
 
 	$driveSubCost = 199;
-	$quickRatingPercent = 0.67;
-	$completeSurveyPercent = 0.38;
-	$vipPercentile = 0.22;
+	$quickRatingPercent = ($fullService ? 0.5 : 0.67);
+	$completeSurveyPercent = ($fullService ? 0.3 : 0.38);
+	$vipPercentile = ($fullService ? 0.06 : 0.22);
 	$offersSentPercentile = 0.29;
-	$rtrPercentile = 0.25;
+	$rtrPercentile = ($fullService ? 0.05 : 0.25);
 	$vipEngagment = 0.25;
-	$additionVisits = 22;
-
-	//Please adjust
-	$avgTableSize = 3;
-
+	$additionVisits = ($fullService ? 4 : 12);
+	$avgTableSize = ($fullService ? 3 : 1);
 
 	$avg_check    = $_POST["cf-averageCheck"];
 	$avg_custNo    = $_POST["cf-averageCustNo"];
@@ -40,9 +37,10 @@ function send_mail(){
 	$companyName = $_POST["cf-companyName"];
 
 	$averageSalesWeek = $avg_check * $avg_custNo;
-	$quickRating = $quickRatingPercent * $averageSalesWeek;
+	$quickRating = ($quickRatingPercent * $avg_custNo) / $avgTableSize;
 	$annualVIPsignups = $quickRating * $vipPercentile * 52;
-	$additionAnnualSales = $annualVIPsignups * $avg_check * $avgTableSize * $vipEngagment * $additionVisits;
+	$annualRTRoffers = $quickRating * $completeSurveyPercent * ($fullService ? 1 : $offersSentPercentile) * $rtrPercentile * 52;
+	$additionAnnualSales = ($annualVIPsignups * $avg_check * $avgTableSize * $vipEngagment * $additionVisits);
 	$additionMonthlySales = $additionAnnualSales / 12;
 	$repeatCustomers = $annualVIPsignups * $vipEngagment;
 	$calc = $additionAnnualSales / ($driveSubCost * 12);
@@ -53,9 +51,9 @@ function send_mail(){
 
 	$subject = 'DriveCX ROI Report for ' . $f_name . " " . $l_name;
 
-	
-	
-	
+
+
+
 	//Input appropriate mailchimp api-key i.e. 2a2aabc6bee455d3a0fa3068b85df27f-us15
 	//$api_key = "2a2aabc6bee455d3a0fa3068b85df27f-us15";
 	$api_key = "2a2aabc6bee455d3a0fa3068b85df27f-us15";
@@ -67,10 +65,10 @@ function send_mail(){
 	//$service_url = 'https://us15.api.mailchimp.com/3.0/templates/' . $template_id . "/";
 	//$service_url = 'https://us15.api.mailchimp.com/3.0/templates/' . $template_id . "/default-content";
 	//$service_url = 'https://us15.api.mailchimp.com/3.0/campaigns/';
-	
+
 	$service_url = 'https://us15.api.mailchimp.com/3.0/campaigns/' . $campaign_id . "/content/";
 
-	
+
 
 
 	$curl = curl_init($service_url);
@@ -130,7 +128,7 @@ function send_mail(){
 
 	}
 
-	
+
 	$message = 'average sales per week = ' . $averageSalesWeek . "\r\n";
 	$message .= 'Quick Ratings = ' . $quickRating . "\r\n";
 	$message .= 'Annual addition Customers = ' . $annualVIPsignups . "\r\n";
@@ -148,7 +146,7 @@ function send_mail(){
 	$to = $email;
 
 	// If email has been process for sending, display a success message
-	if ( mail( $to, $subject, $html , $headers) ) {
+	if ( mail( $to, $subject, $message , $headers) ) {
 		echo '<div>';
 		echo '<p>A copy of your report has been sent to your email address '. $email.'</p>';
 		echo '</div>';
@@ -157,11 +155,11 @@ function send_mail(){
 	}
 
 	send_deal($email);
-	
+
 	//echo $html;
-	
-	
-	
+
+
+
 	$myfile = fopen("email.html", "w") or die("Unable to open file!");
 	fwrite($myfile, $html);
 	fclose($myfile);
