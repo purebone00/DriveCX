@@ -23,14 +23,14 @@ function QuickFormulaSubmit() {
         document.getElementById("quickSection").style.width = "0";
     }, 1500);
 
-    document.getElementById("q_quickRating").value = "";
-    document.getElementById("q_csp").value = "";
-    document.getElementById("q_vipEngage").value = "";
-    document.getElementById("q_tableSize").value = "";
-    document.getElementById("q_vip").value = "";
-    document.getElementById("q_offerSent").value = "";
-    document.getElementById("q_rtr").value = "";
-    document.getElementById("q_addVisits").value = "";
+    document.getElementById("q_quickRating").value = quick;
+    document.getElementById("q_csp").value = surveyPercentage;
+    document.getElementById("q_vipEngage").value = vipEngage;
+    document.getElementById("q_tableSize").value = tableSize;
+    document.getElementById("q_vip").value = vipPercentage;
+    document.getElementById("q_offerSent").value = offerSent;
+    document.getElementById("q_rtr").value = rtr;
+    document.getElementById("q_addVisits").value = addVisits;
     return false;
 }
 
@@ -48,17 +48,6 @@ function createQuick(quick, surveyPercentage, vipEngage, tableSize, vipPercentag
         rtr: rtr,
         addVisits: addVisits
     };
-
-    // Get a key for a new Post.
-    /*var newPostKey = firebase.database().ref().child('quick').push().key;
-
-    if (newPostKey.length == 0) {
-        console.log("fail");
-        return null;
-    } else {
-        console.log("success");
-    } */
-    // Write the new post's data simultaneously in the posts list and the user's post list.
     var updates = {};
     updates['/quick/' + 'quickFormula'] = postData;
 
@@ -89,16 +78,62 @@ function FullFormulaSubmit() {
         document.getElementById("fullSection").style.width = "0";
     }, 1500);
 
-    document.getElementById("f_fullRating").value = "";
-    document.getElementById("f_csp").value = "";
-    document.getElementById("f_vipEngage").value = "";
-    document.getElementById("f_tableSize").value = "";
-    document.getElementById("f_vip").value = "";
-    document.getElementById("f_rtr").value = "";
-    document.getElementById("f_addVisits").value = "";
+    document.getElementById("f_fullRating").value = full;
+    document.getElementById("f_csp").value = surveyPercentage;
+    document.getElementById("f_vipEngage").value = vipEngage;
+    document.getElementById("f_tableSize").value = tableSize;
+    document.getElementById("f_vip").value = vipPercentage;
+    document.getElementById("f_rtr").value = rtr;
+    document.getElementById("f_addVisits").value = addVisits;
     return false;
 }
 
+function loadQuickForm() {
+    return firebase.database().ref('/quick/' + 'quickFormula').once('value').then(function(snapshot) {
+        let quick, surveyPercentage, vipEngage, tableSize, vipPercentage, offerSent, rtr, addVisits;
+
+        quick = snapshot.val().quick;
+        surveyPercentage = snapshot.val().surveyPercentage;
+        vipEngage = snapshot.val().vipEngage;
+        tableSize = snapshot.val().tableSize;
+        vipPercentage = snapshot.val().vipPercentage;
+        offerSent = snapshot.val().offerSent;
+        rtr = snapshot.val().rtr;
+        addVisits = snapshot.val().addVisits;
+
+        document.getElementById("q_quickRating").value = quick;
+        document.getElementById("q_csp").value = surveyPercentage;
+        document.getElementById("q_vipEngage").value = vipEngage;
+        document.getElementById("q_tableSize").value = tableSize;
+        document.getElementById("q_vip").value = vipPercentage;
+        document.getElementById("q_offerSent").value = offerSent;
+        document.getElementById("q_rtr").value = rtr;
+        document.getElementById("q_addVisits").value = addVisits;
+    });
+}
+
+
+function loadFullForm() {
+    return firebase.database().ref('/full/' + 'fullFormula').once('value').then(function(snapshot) {
+        let full, surveyPercentage, vipEngage, tableSize, vipPercentage, rtr, addVisits;
+
+        full = snapshot.val().full;
+        surveyPercentage = snapshot.val().surveyPercentage;
+        vipEngage = snapshot.val().vipEngage;
+        tableSize = snapshot.val().tableSize;
+        vipPercentage = snapshot.val().vipPercentage;
+        rtr = snapshot.val().rtr;
+        addVisits = snapshot.val().addVisits;
+
+        document.getElementById("f_fullRating").value = full;
+        document.getElementById("f_csp").value = surveyPercentage;
+        document.getElementById("f_vipEngage").value = vipEngage;
+        document.getElementById("f_tableSize").value = tableSize;
+        document.getElementById("f_vip").value = vipPercentage;
+        document.getElementById("f_rtr").value = rtr;
+        document.getElementById("f_addVisits").value = addVisits;
+    });
+}
 
 //Database Writing
 function createFull(full, surveyPercentage, vipEngage, tableSize, vipPercentage, rtr, addVisits) {
@@ -114,21 +149,22 @@ function createFull(full, surveyPercentage, vipEngage, tableSize, vipPercentage,
         addVisits: addVisits
     };
 
-    // Get a key for a new Post.
-    //var newPostKey = firebase.database().ref().child('full').push().key;
-
-    /*if (newPostKey.length == 0) {
-        console.log("fail");
-        return null;
-    } else {
-        console.log("success");
-    }*/
-    // Write the new post's data simultaneously in the posts list and the user's post list.
-
     var updates = {};
     updates['/full/' + 'fullFormula'] = postData;
 
     return firebase.database().ref().update(updates);
+}
+
+function loadAPIKeys() {
+    return firebase.database().ref('/keys/').once('value').then(function(snapshot) {
+        let pipeDrive, mailChimp;
+        pipeDrive = snapshot.val().pipedrive;
+        mailChimp = snapshot.val().mailchimp;
+
+        document.getElementById("mailchimpAPI").value = pipeDrive;
+        document.getElementById("pipedriveAPI").value = mailChimp;
+
+    });
 }
 
 /*******************************************************************
@@ -163,5 +199,8 @@ End Authorization Functions
 ********************************************************************/
 
 window.onload = function() {
+    loadFullForm();
+    loadQuickForm();
+    loadAPIKeys();
     initApp();
 };

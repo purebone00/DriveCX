@@ -332,7 +332,15 @@
                             </div>
                         </div>
                         <div id="panelBodyAbout" class="panel-body">
-
+                            <div class="form-group">
+                                <label>MailChimp</label>
+                                <input class="mdl-textfield__input" style="width:100%;" type="text" id="mailchimpAPI" name="mailchimpAPI" placeholder="api" />
+                            </div>
+                            <div class="form-group">
+                                <label>PipeDrive</label>
+                                <input class="mdl-textfield__input" style="width:100%;" type="text" id="pipedriveAPI" name="pipedriveAPI" placeholder="api" />
+                            </div>
+                            <button id="FormulaSubmit" type="submit" onclick="return" class="btn btn-default">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -342,7 +350,19 @@
                             <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Change Password</h3>
                         </div>
                         <div class="panel-body">
-
+                            <div class="form-group">
+                                <label>Old Password</label>
+                                <input class="mdl-textfield__input" style="width:100%;" type="text" id="oldPW" name="oldPW" placeholder="Old Password" />
+                            </div>
+                            <div class="form-group">
+                                <label>New Password</label>
+                                <input class="mdl-textfield__input" style="width:100%;" type="text" id="newPW" name="newPW" placeholder="New Password" />
+                            </div>
+                            <div class="form-group">
+                                <label>Confirm New Password</label>
+                                <input class="mdl-textfield__input" style="width:100%;" type="text" id="newPWConfirm" name="newPWConfirm" placeholder="Confirm New Password" />
+                            </div>
+                            <button id="PasswordSubmit" type="submit" onclick="return" class="btn btn-default">Submit</button>
                         </div>
                     </div>
                 </div>
