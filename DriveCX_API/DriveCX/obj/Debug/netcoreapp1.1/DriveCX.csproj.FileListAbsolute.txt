@@ -1,0 +1,10 @@
+c:\users\dell\documents\visual studio 2017\Projects\DriveCX\DriveCX\bin\Debug\netcoreapp1.1\DriveCX.deps.json
+c:\users\dell\documents\visual studio 2017\Projects\DriveCX\DriveCX\bin\Debug\netcoreapp1.1\DriveCX.runtimeconfig.json
+c:\users\dell\documents\visual studio 2017\Projects\DriveCX\DriveCX\bin\Debug\netcoreapp1.1\DriveCX.runtimeconfig.dev.json
+c:\users\dell\documents\visual studio 2017\Projects\DriveCX\DriveCX\bin\Debug\netcoreapp1.1\DriveCX.dll
+c:\users\dell\documents\visual studio 2017\Projects\DriveCX\DriveCX\bin\Debug\netcoreapp1.1\DriveCX.pdb
+c:\users\dell\documents\visual studio 2017\Projects\DriveCX\DriveCX\obj\Debug\netcoreapp1.1\DriveCX.csprojResolveAssemblyReference.cache
+c:\users\dell\documents\visual studio 2017\Projects\DriveCX\DriveCX\obj\Debug\netcoreapp1.1\UserSecretsAssemblyInfo.cs
+c:\users\dell\documents\visual studio 2017\Projects\DriveCX\DriveCX\obj\Debug\netcoreapp1.1\DriveCX.AssemblyInfo.cs
+c:\users\dell\documents\visual studio 2017\Projects\DriveCX\DriveCX\obj\Debug\netcoreapp1.1\DriveCX.dll
+c:\users\dell\documents\visual studio 2017\Projects\DriveCX\DriveCX\obj\Debug\netcoreapp1.1\DriveCX.pdb

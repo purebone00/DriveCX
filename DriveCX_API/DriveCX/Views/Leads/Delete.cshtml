@@ -1,0 +1,65 @@
+@model DriveCX.Models.Lead
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Lead</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <input type="hidden" asp-for="ID" />
+        <dt>
+            @Html.DisplayNameFor(model => model.fullService)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.fullService)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.avg_custNo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.avg_custNo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.avg_check)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.avg_check)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.f_name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.f_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.l_name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.l_name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.companyName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.companyName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            <a asp-action="Index">Back to List</a>
+        </div>
+    </form>
+</div>

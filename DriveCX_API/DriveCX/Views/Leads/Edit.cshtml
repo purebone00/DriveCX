@@ -1,0 +1,79 @@
+@model DriveCX.Models.Lead
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Lead</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="ID" />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <div class="checkbox">
+                    <input asp-for="fullService" />
+                    <label asp-for="fullService"></label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="avg_custNo" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="avg_custNo" class="form-control" />
+                <span asp-validation-for="avg_custNo" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="avg_check" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="avg_check" class="form-control" />
+                <span asp-validation-for="avg_check" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="f_name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="f_name" class="form-control" />
+                <span asp-validation-for="f_name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="l_name" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="l_name" class="form-control" />
+                <span asp-validation-for="l_name" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="email" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="companyName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="companyName" class="form-control" />
+                <span asp-validation-for="companyName" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
