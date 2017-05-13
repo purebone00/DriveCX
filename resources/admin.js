@@ -1,6 +1,41 @@
+function changePassword() {
+    var user = firebase.auth().currentUser;
+
+    var credential;
+
+    var oldPassword, newPassword, newPasswordConfirm;
+    oldPassword = document.getElementById("oldPW").value;
+    console.log(oldPassword);
+    newPassword = document.getElementById("newPW").value;
+    newPasswordConfirm = document.getElementById("newPWConfirm").value;
+
+    if (newPassword != newPasswordConfirm) {
+        console.log("old and confirm don't match.");
+        return null;
+    }
+
+    credential = firebase.auth.EmailAuthProvider.credential(user.email, oldPassword);
+
+    user.reauthenticate(credential).then(function() {
+        // User re-authenticated.
+        console.log("reauthenticated.");
+    }, function(error) {
+        // An error happened.
+        console.log("failed to reauthenticate.");
+    });
+
+    user.updatePassword(newPassword).then(function() {
+        // Update successful.
+        console.log("Successful password change.");
+    }, function(error) {
+        // An error happened.
+        console.log("Unsuccessful password change.");
+    });
+}
+
 function QuickFormulaSubmit() {
 
-    var quick, surveyPercentage, vipEngage, tableSize, vipPercentage, offerSent, rtr, addVisits;
+    let quick, surveyPercentage, vipEngage, tableSize, vipPercentage, offerSent, rtr, addVisits;
     quick = document.getElementById("q_quickRating").value;
     surveyPercentage = document.getElementById("q_csp").value;
     vipEngage = document.getElementById("q_vipEngage").value;
@@ -232,6 +267,8 @@ function initApp() {
 End Authorization Functions
 ********************************************************************/
 function init() {
+    // Initialize Firebase
+
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyDQ3zo2EQyHwpsLtL3WVH5MvJPWbr2ZcYc",

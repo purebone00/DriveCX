@@ -353,7 +353,7 @@
                                 <label>Confirm New Password</label>
                                 <input class="mdl-textfield__input" style="width:100%;" type="text" id="newPWConfirm" name="newPWConfirm" placeholder="Confirm New Password" />
                             </div>
-                            <button id="PasswordSubmit" type="submit" onclick="return" class="btn btn-default">Submit</button>
+                            <button id="PasswordSubmit" type="submit" onclick="return changePassword()" class="btn btn-default">Submit</button>
                         </div>
                     </div>
                 </div>
