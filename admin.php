@@ -32,18 +32,7 @@
     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-storage.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyDQ3zo2EQyHwpsLtL3WVH5MvJPWbr2ZcYc",
-            authDomain: "drivecx-4e872.firebaseapp.com",
-            databaseURL: "https://drivecx-4e872.firebaseio.com",
-            projectId: "drivecx-4e872",
-            storageBucket: "drivecx-4e872.appspot.com",
-            messagingSenderId: "987066303919"
-        };
-        firebase.initializeApp(config);
-    </script>
+        <script src="resources/admin.js"></script>
 
 </head>
 
@@ -220,14 +209,15 @@
                             </form>
                             <button id="FormulaSubmit" type="submit" onclick="return QuickFormulaSubmit()" class="btn btn-default">Submit</button>
                             <button type="reset" class="btn btn-default">Reset</button>
-                            <div id="quickSection" class="overlay">
-                                <!-- Overlay content -->
-                                <div class="overlay-content">
-                                    <div class="load-bar">
-                                        <div class="bar"></div>
-                                        <div class="bar"></div>
-                                        <div class="bar"></div>
-                                    </div>
+
+                        </div>
+                        <div id="quickSection" class="overlay">
+                            <!-- Overlay content -->
+                            <div class="overlay-content">
+                                <div class="load-bar">
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
                                 </div>
                             </div>
                         </div>
@@ -283,14 +273,15 @@
                             </form>
                             <button id="FormulaSubmit" type="submit" onclick="return FullFormulaSubmit()" class="btn btn-default">Submit</button>
                             <button type="reset" class="btn btn-default">Reset</button>
-                            <div id="fullSection" class="overlay">
-                                <!-- Overlay content -->
-                                <div class="overlay-content">
-                                    <div class="load-bar">
-                                        <div class="bar"></div>
-                                        <div class="bar"></div>
-                                        <div class="bar"></div>
-                                    </div>
+
+                        </div>
+                        <div id="fullSection" class="overlay">
+                            <!-- Overlay content -->
+                            <div class="overlay-content">
+                                <div class="load-bar">
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
                                 </div>
                             </div>
                         </div>
@@ -318,10 +309,10 @@
             <div id="editme">
                 <div class="col-lg-6" style="margin-bottom:50px;">
                     <div class="panel panel-default">
-                        <div id="panelHeadingAbout" class="panel-heading">
+                        <div id="api_panelHeading" class="panel-heading">
                             <h3 class="panel-title"><i class="fa fa-long-arrow-right fa-fw"></i> API Keys </h3>
                         </div>
-                        <div id="myAbout" class="overlay">
+                        <div id="api" class="overlay">
                             <!-- Overlay content -->
                             <div class="overlay-content">
                                 <div class="load-bar">
@@ -331,7 +322,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="panelBodyAbout" class="panel-body">
+                        <div id="api_panelBody" class="panel-body">
                             <div class="form-group">
                                 <label>MailChimp</label>
                                 <input class="mdl-textfield__input" style="width:100%;" type="text" id="mailchimpAPI" name="mailchimpAPI" placeholder="api" />
@@ -340,7 +331,7 @@
                                 <label>PipeDrive</label>
                                 <input class="mdl-textfield__input" style="width:100%;" type="text" id="pipedriveAPI" name="pipedriveAPI" placeholder="api" />
                             </div>
-                            <button id="FormulaSubmit" type="submit" onclick="return" class="btn btn-default">Submit</button>
+                            <button id="FormulaSubmit" type="submit" onclick="return APISubmit();" class="btn btn-default">Submit</button>
                         </div>
                     </div>
                 </div>
@@ -380,7 +371,6 @@
 
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script src="resources/admin.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>

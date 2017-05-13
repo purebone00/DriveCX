@@ -158,13 +158,47 @@ function createFull(full, surveyPercentage, vipEngage, tableSize, vipPercentage,
 function loadAPIKeys() {
     return firebase.database().ref('/keys/').once('value').then(function(snapshot) {
         let pipeDrive, mailChimp;
-        pipeDrive = snapshot.val().pipedrive;
-        mailChimp = snapshot.val().mailchimp;
+        pipeDrive = snapshot.val().pipeDrive;
+        mailChimp = snapshot.val().mailChimp;
 
         document.getElementById("mailchimpAPI").value = pipeDrive;
         document.getElementById("pipedriveAPI").value = mailChimp;
 
     });
+}
+
+function APISubmit() {
+    let mailChimp, pipeDrive;
+
+    mailChimp = document.getElementById("mailchimpAPI").value;
+    pipeDrive = document.getElementById("pipedriveAPI").value;
+
+    createAPI(mailChimp, pipeDrive);
+
+    var width = document.getElementById("api_panelBody").offsetWidth;
+    document.getElementById("api").style.width = String(width) + "px";
+    var height = document.getElementById("api_panelBody").offsetHeight;
+    document.getElementById("api").style.height = String(height) + "px";
+    var margin = document.getElementById("api_panelHeading").offsetHeight;
+    document.getElementById("api").style.marginTop = String(margin) + "px";
+
+    setTimeout(function() {
+        document.getElementById("api").style.width = "0";
+    }, 1500);
+
+}
+
+function createAPI(mailChimp, pipeDrive) {
+    // 1 Write Entry to DB - Append to end
+    var postData = {
+        mailChimp: mailChimp,
+        pipeDrive: pipeDrive
+    };
+
+    var updates = {};
+    updates['/keys/'] = postData;
+
+    return firebase.database().ref().update(updates);
 }
 
 /*******************************************************************
@@ -197,8 +231,22 @@ function initApp() {
 /*******************************************************************
 End Authorization Functions
 ********************************************************************/
+function init() {
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDQ3zo2EQyHwpsLtL3WVH5MvJPWbr2ZcYc",
+        authDomain: "drivecx-4e872.firebaseapp.com",
+        databaseURL: "https://drivecx-4e872.firebaseio.com",
+        projectId: "drivecx-4e872",
+        storageBucket: "drivecx-4e872.appspot.com",
+        messagingSenderId: "987066303919"
+    };
+    firebase.initializeApp(config);
+}
 
 window.onload = function() {
+
+    init();
     loadFullForm();
     loadQuickForm();
     loadAPIKeys();
