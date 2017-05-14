@@ -335,10 +335,21 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-6" id="editprof" style="margin-bottom:50px;">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
+                        <div class="pw_panel-heading">
                             <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> Change Password</h3>
+                        </div>
+                        <div id="pw" class="overlay">
+                            <!-- Overlay content -->
+                            <div class="overlay-content">
+                                <div class="load-bar">
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                    <div class="bar"></div>
+                                </div>
+                            </div>
                         </div>
                         <div class="panel-body">
                             <div class="form-group">

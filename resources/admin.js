@@ -1,3 +1,5 @@
+function overlayEffect()
+
 function changePassword() {
     var user = firebase.auth().currentUser;
 
