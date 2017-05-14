@@ -140,7 +140,7 @@
                                     </div>
                                     <div class="col-xs-9 text-right">
                                         <div id="currentProjects" class="huge">0</div>
-                                        <div>ROI Calculated Today</div>
+                                        <div>Leads Generated Today</div>
                                     </div>
                                 </div>
                             </div>

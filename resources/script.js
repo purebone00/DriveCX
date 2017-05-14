@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         Typed.new('.element', {
             strings: [questionHeader, answer],
-            typeSpeed: 1
+            typeSpeed: 2
         });
     }, 1000);
 });

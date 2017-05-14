@@ -7,16 +7,10 @@
  * General styles
  */
 
-body {
-    zoom: 90%;
-}
-
 body,
 html {
-    height: 100%;
-    width: 100%;
     padding-top: 30px;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05)), url("./images/restaurant.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.55)), url("./images/restaurant.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
