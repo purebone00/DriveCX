@@ -36,6 +36,9 @@ function send_mail(){
 	$email   = $_POST["cf-email"];
 	$companyName = $_POST["cf-companyName"];
 
+	
+	
+	
 	$averageSalesWeek = $avg_check * $avg_custNo;
 	$quickRating = ($quickRatingPercent * $avg_custNo) / $avgTableSize;
 	$annualVIPsignups = $quickRating * $vipPercentile * 52;
@@ -148,13 +151,13 @@ function send_mail(){
 	// If email has been process for sending, display a success message
 	if ( mail( $to, $subject, $html , $headers) ) {
 		echo '<div>';
-		echo '<p>A copy of your report has been sent to your email address '. $email.'</p>';
+		//echo '<p>A copy of your report has been sent to your email address '. $email.'</p>';
 		echo '</div>';
 	} else {
 		echo 'An unexpected error occurred';
 	}
 
-	send_deal($email);
+	send_deal($email,$avg_check,$avg_custNo,$f_name,$l_name,$companyName);
 
 	//echo $html;
 
