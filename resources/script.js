@@ -63,24 +63,31 @@ function loadFullForm() {
         var arrayData = localStorage.getItem('fullFormula');
         var value = JSON.parse(arrayData);
 
-        jQuery.post("php/send_mail.php", { myKey: value }, function(data) {
-            alert("Do something with example.php response");
-        }).fail(function() {
-            alert("Damn, something broke");
-        });
     });
 }
 
 
-var questionHeader = "How much more should your restaurant be earning?";
-var answer = "We can tell you! \n Simply tell us a little about your restaurant and we’ll send you a custom ROI Report absolutley Free!";
+var questionHeader = "Hello There?";
+var answer1 = "Do you know how much your restaurant is capable of earning?";
+var answer2 = "We Can tell you! \n Simply tell us about your restaurant and we will send you a custom ROI report absolutely free!";
 
+var info = "Our ROI calculations are based on average customer engagement rates and may not be the same for every restaurant."
+var info2 = "DRIVE can't guarantee these numbers, but we'll help you to acheive the best outcomes for your restaurants.";
 
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(function() {
         Typed.new('.element', {
-            strings: [questionHeader, answer],
+            strings: [questionHeader, answer1, answer2],
             typeSpeed: 2
+        });
+    }, 2300);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        Typed.new('.element2', {
+            strings: [info, info2],
+            typeSpeed: 3.5
         });
     }, 2300);
 });

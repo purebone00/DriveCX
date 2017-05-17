@@ -36,9 +36,6 @@ function send_mail(){
 	$email   = $_POST["cf-email"];
 	$companyName = $_POST["cf-companyName"];
 
-	$value = $_POST['myKey'];
-	echo $value;
-
 
 	$averageSalesWeek = $avg_check * $avg_custNo;
 	$quickRating = ($quickRatingPercent * $avg_custNo) / $avgTableSize;
