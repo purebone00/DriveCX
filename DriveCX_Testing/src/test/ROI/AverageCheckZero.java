@@ -22,7 +22,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class AverageCheckZero {
+public class verify_Lastname {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -41,7 +41,7 @@ public class AverageCheckZero {
   }
 
   @Test
-  public void AverageCheckZero_test() throws Exception {
+  public void verify_FirstName_test() throws Exception {
 	
 	  driver.get(baseUrl);
 	  driver.findElement(By.id("cf-fName")).clear();

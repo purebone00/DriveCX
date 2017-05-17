@@ -22,7 +22,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class verify_Lastname {
+public class AverageCheckLargeNumber {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -34,14 +34,14 @@ public class verify_Lastname {
 	  String exePath = "C:\\chromedriver.exe";
 		System.setProperty("webdriver.chrome.driver", exePath);
 		driver = new ChromeDriver();
-    
+		driver.manage().window().setSize(new Dimension(1366,768));
     baseUrl = "https://www.vince.life/drive_static/";
    
     
   }
 
   @Test
-  public void verify_FirstName_test() throws Exception {
+  public void AverageCheckLargeNumber_test() throws Exception {
 	
 	  driver.get(baseUrl);
 	  driver.findElement(By.id("cf-fName")).clear();
