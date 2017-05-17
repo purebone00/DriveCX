@@ -61,11 +61,11 @@ function success_message($email,$avg_check,$avg_custNo,$f_name,$l_name,$companyN
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
     <!-- Custom Styles -->
-    <link rel="stylesheet" type="text/css" href="resources/style.css" />
+    <link rel="stylesheet" type="text/css" href="resources/stylesuccess.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     <!-- Custom Script -->
-    <script type="text/javascript" src="resources/script.js"></script>
+    <script type="text/javascript" src="resources/scriptsucess.js"></script>
     <script type="text/javascript" src="resources/typed.js"></script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
@@ -77,15 +77,45 @@ function success_message($email,$avg_check,$avg_custNo,$f_name,$l_name,$companyN
 
     <div class="container">
 	
+	<div class="class="col-sm-12" style="max-width: 550px; margin: auto;
+    width: 50%;">
+	<div class ="row" >
+	 <div class="animated zoomInLeft" style="-webkit-animation-delay: 1s;">
+                        <div class='quote'>
+                            <div >
+                                <img class='img-responsive' style="width:200px;" src='resources/images/man_material.png'>
+                            </div>
+                            <div >
+                                <div class='speech-bubble left'>
+                                    <p style="color: black!important">
+                                        <img style="width:25px;" src='resources/images/driveSmallLogo.png' alt=""> Michael Lenizky
+                                        <span class='time-ago'>
+                                            Manager of Customer Success
+                                        </span>
+                                    </p>
+                                    <blockquote>
+                                        <div class="element"></div>
+                                    </blockquote>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+	</div>
+	
+			
 	 <div class="row">
 
-                <div class="col-md-12">
+                
+				
+				
+				
+				
                     <div style="margin-bottom:25px; margin-top:-85px; color: #757575;">
                         <div class="card card-container">
                             <img src="resources/images/logo.png" class="img-responsive container" alt=""></img>
-                            <h1>Thank You</h1>
+                            <h1>Information sent:</h1>
 							<?php
-							echo '<p>A copy of your report has been sent to your email address '. $email.'</p>';
+							echo '<p>Email address:'. $email.'</p>';
 							echo '<p>Information sent:</p>';
 							echo '<p>Average check: '. $avg_check.'</p>';
 							echo '<p>Average customer number: '. $avg_custNo.'</p>';
@@ -97,12 +127,12 @@ function success_message($email,$avg_check,$avg_custNo,$f_name,$l_name,$companyN
 							
                         </div>
                     </div>
-        </div>
+        
             </div>
 
 
-
-
+	</div>
+</div>
 
 </body>
 

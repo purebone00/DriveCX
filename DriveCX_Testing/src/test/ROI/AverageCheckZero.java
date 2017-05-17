@@ -1,7 +1,7 @@
 //DEPRECATED, REMOVED ADD BUTTON, no longer possible for admin to delete themselves
 //Requirements: 3911ERD_ver09
 
-package test.Email;
+package test.ROI;
 
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
@@ -22,7 +22,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class verify_FirstName {
+public class AverageCheckZero {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -41,7 +41,7 @@ public class verify_FirstName {
   }
 
   @Test
-  public void verify_FirstName_test() throws Exception {
+  public void AverageCheckZero_test() throws Exception {
 	
 	  driver.get(baseUrl);
 	  driver.findElement(By.id("cf-fName")).clear();
