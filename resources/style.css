@@ -173,9 +173,6 @@ html {
 }
 
 .btn.btn-signin {
-    /*background-color: #4d90fe; */
-    /*background-color: rgb(104, 145, 162);*/
-    /* background-color: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
     padding: 0px;
     font-weight: 700;
     font-size: 14px;
@@ -189,15 +186,6 @@ html {
     -webkit-transition: all 0.218s;
     transition: all 0.218s;
 }
-
-
-/*
-.btn.btn-signin:hover,
-.btn.btn-signin:active,
-.btn.btn-signin:focus {
-    background-color: rgb(12, 97, 33);
-}
-*/
 
 .element {
     display: inline;
@@ -322,4 +310,18 @@ html {
 .quote .speech-bubble p {
     line-height: 1.3em;
     margin: 0;
+}
+
+#animatedBubble {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+}
+
+@media screen and (max-width: 1024px) {
+    #animatedBubble {
+        display: none;
+    }
+    h2 {
+        margin-bottom: 45px;
+    }
 }
