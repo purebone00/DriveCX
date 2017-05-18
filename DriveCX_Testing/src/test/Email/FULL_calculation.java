@@ -43,27 +43,16 @@ public class FULL_calculation {
   @Test
   public void FULL_calculation_test() throws Exception {
 	
-	  driver.get(baseUrl);
-	  driver.findElement(By.id("cf-fName")).clear();
-	  driver.findElement(By.id("cf-fName")).sendKeys("vince");
-	  driver.findElement(By.cssSelector("div.row > div.row > div.col-md-6 > div")).click();
-	  driver.findElement(By.name("cf-submitted")).click();
-	  driver.findElement(By.id("cf-averageCheck")).clear();
-	  driver.findElement(By.id("cf-averageCheck")).sendKeys("1");
-	  driver.findElement(By.id("cf-averageCustNo")).clear();
-	  driver.findElement(By.id("cf-averageCustNo")).sendKeys("1");
-	  driver.findElement(By.id("cf-lName")).clear();
-	  driver.findElement(By.id("cf-lName")).sendKeys("w");
-	  driver.findElement(By.id("cf-email")).clear();
-	  driver.findElement(By.id("cf-email")).sendKeys("w@w.ca");
-	  driver.findElement(By.id("cf-companyName")).clear();
-	  driver.findElement(By.id("cf-companyName")).sendKeys("company");
-	  driver.findElement(By.name("cf-submitted")).click();
-	  try {
-	    assertEquals("First name: vince", driver.findElement(By.xpath("//p[5]")).getText());
-	  } catch (Error e) {
-	    verificationErrors.append(e.toString());
-	  }
+	  driver.get(baseUrl + "/?gws_rd=ssl");
+	  driver.findElement(By.linkText("Gmail")).click();
+	  driver.findElement(By.id("identifierId")).clear();
+	  driver.findElement(By.id("identifierId")).sendKeys("team43bcit");
+	  driver.findElement(By.cssSelector("div.ZFr60d.CeoRYc")).click();
+	  driver.findElement(By.name("password")).click();
+	  driver.findElement(By.name("password")).clear();
+	  driver.findElement(By.name("password")).sendKeys("passwordbcit");
+	  driver.findElement(By.cssSelector("span.RveJvd.snByac")).click();
+
   }
 
   @After

@@ -22,8 +22,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class verify_Lastname {
+public class AverageCheckNumbersDoubleValid {
   private WebDriver driver;
+  private WebDriver driver2;
   private String baseUrl;
   private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
@@ -34,36 +35,36 @@ public class verify_Lastname {
 	  String exePath = "C:\\chromedriver.exe";
 		System.setProperty("webdriver.chrome.driver", exePath);
 		driver = new ChromeDriver();
-    
+		
     baseUrl = "https://www.vince.life/drive_static/";
    
     
   }
 
   @Test
-  public void verify_FirstName_test() throws Exception {
-	
+  public void AverageCheckNumbersDoubleValid_test() throws Exception {
+	 
 	  driver.get(baseUrl);
-	  driver.findElement(By.id("cf-fName")).clear();
-	  driver.findElement(By.id("cf-fName")).sendKeys("vince");
-	  driver.findElement(By.cssSelector("div.row > div.row > div.col-md-6 > div")).click();
-	  driver.findElement(By.name("cf-submitted")).click();
+	  driver.findElement(By.id("cf-averageCheck")).click();
 	  driver.findElement(By.id("cf-averageCheck")).clear();
-	  driver.findElement(By.id("cf-averageCheck")).sendKeys("1");
+	  driver.findElement(By.id("cf-averageCheck")).sendKeys("1.2");
 	  driver.findElement(By.id("cf-averageCustNo")).clear();
 	  driver.findElement(By.id("cf-averageCustNo")).sendKeys("1");
+	  driver.findElement(By.id("cf-fName")).clear();
+	  driver.findElement(By.id("cf-fName")).sendKeys("x");
 	  driver.findElement(By.id("cf-lName")).clear();
-	  driver.findElement(By.id("cf-lName")).sendKeys("w");
+	  driver.findElement(By.id("cf-lName")).sendKeys("x");
 	  driver.findElement(By.id("cf-email")).clear();
-	  driver.findElement(By.id("cf-email")).sendKeys("w@w.ca");
+	  driver.findElement(By.id("cf-email")).sendKeys("x@x.x");
 	  driver.findElement(By.id("cf-companyName")).clear();
-	  driver.findElement(By.id("cf-companyName")).sendKeys("company");
+	  driver.findElement(By.id("cf-companyName")).sendKeys("x");
 	  driver.findElement(By.name("cf-submitted")).click();
-	  try {
-	    assertEquals("First name: vince", driver.findElement(By.xpath("//p[5]")).getText());
-	  } catch (Error e) {
-	    verificationErrors.append(e.toString());
-	  }
+	  assertEquals("Average check: 1.2", driver.findElement(By.xpath("//p[3]")).getText());
+	  
+	  
+
+
+
   }
 
   @After
