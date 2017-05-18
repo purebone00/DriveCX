@@ -22,7 +22,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class verify_Lastname {
+public class CompanyName_Spaces {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;

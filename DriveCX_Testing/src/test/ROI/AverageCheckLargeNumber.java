@@ -44,26 +44,22 @@ public class AverageCheckLargeNumber {
   public void AverageCheckLargeNumber_test() throws Exception {
 	
 	  driver.get(baseUrl);
-	  driver.findElement(By.id("cf-fName")).clear();
-	  driver.findElement(By.id("cf-fName")).sendKeys("vince");
-	  driver.findElement(By.cssSelector("div.row > div.row > div.col-md-6 > div")).click();
-	  driver.findElement(By.name("cf-submitted")).click();
+	  driver.findElement(By.id("cf-averageCheck")).click();
 	  driver.findElement(By.id("cf-averageCheck")).clear();
-	  driver.findElement(By.id("cf-averageCheck")).sendKeys("1");
+	  driver.findElement(By.id("cf-averageCheck")).sendKeys("999999999999999999999999999999999999999999999");
 	  driver.findElement(By.id("cf-averageCustNo")).clear();
 	  driver.findElement(By.id("cf-averageCustNo")).sendKeys("1");
+	  driver.findElement(By.id("cf-fName")).clear();
+	  driver.findElement(By.id("cf-fName")).sendKeys("x");
 	  driver.findElement(By.id("cf-lName")).clear();
-	  driver.findElement(By.id("cf-lName")).sendKeys("w");
+	  driver.findElement(By.id("cf-lName")).sendKeys("x");
 	  driver.findElement(By.id("cf-email")).clear();
-	  driver.findElement(By.id("cf-email")).sendKeys("w@w.ca");
+	  driver.findElement(By.id("cf-email")).sendKeys("x@x.x");
 	  driver.findElement(By.id("cf-companyName")).clear();
-	  driver.findElement(By.id("cf-companyName")).sendKeys("company");
+	  driver.findElement(By.id("cf-companyName")).sendKeys("c");
 	  driver.findElement(By.name("cf-submitted")).click();
-	  try {
-	    assertEquals("First name: vince", driver.findElement(By.xpath("//p[5]")).getText());
-	  } catch (Error e) {
-	    verificationErrors.append(e.toString());
-	  }
+	  assertThat("999999999999999999999999999999999999999999999", is(not(driver.findElement(By.xpath("//p[3]")).getText())));
+
   }
 
   @After

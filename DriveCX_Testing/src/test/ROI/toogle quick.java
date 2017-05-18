@@ -22,7 +22,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class AverageCheckEmpty.java {
+public class ToogleQuick {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -41,7 +41,7 @@ public class AverageCheckEmpty.java {
   }
 
   @Test
-  public void AverageCheckEmpty.java_test() throws Exception {
+  public void AverageCheckEmpty_test() throws Exception {
 	
 	  driver.get(baseUrl);
 	  driver.findElement(By.id("cf-fName")).clear();
