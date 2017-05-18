@@ -17,10 +17,6 @@ html {
   color: white !important;
 }
 
-.img-circle {
-  border-radius: 50px;
-}
-
 .typed-cursor {
   opacity: 1;
   -webkit-animation: blink 0.7s infinite;
@@ -41,15 +37,15 @@ html {
 }
 
 @-webkit-keyframes blink {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-moz-keyframes blink {
@@ -189,6 +185,7 @@ html {
   -moz-transition: all 0.218s;
   -webkit-transition: all 0.218s;
   transition: all 0.218s;
+<<<<<<< HEAD
 }
 
 .element {
@@ -196,6 +193,11 @@ html {
 }
 
 .element2 {
+=======
+}
+
+.element {
+>>>>>>> modal
   display: inline;
 }
 
@@ -325,6 +327,7 @@ html {
   -moz-animation-delay: 1s;
 }
 
+<<<<<<< HEAD
 #animatedBubble2 {
   -webkit-animation-delay: 15.5s;
   -moz-animation-delay: 15.5s;
@@ -337,6 +340,12 @@ html {
   #animatedBubble2 {
     display: none;
   }
+=======
+@media screen and (max-width: 1024px) {
+  #animatedBubble {
+    display: none;
+  }
+>>>>>>> modal
   h2 {
     margin-bottom: 45px;
   }
@@ -344,6 +353,7 @@ html {
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 footer {
+<<<<<<< HEAD
   bottom: 0 !important;
   background-image: linear-gradient(rgba(12, 26, 30, 0.97), rgba(12, 26, 30, 0.97)), url("./images/footer.jpg") !important;
   background-repeat: no-repeat !important;
@@ -353,6 +363,16 @@ footer {
   margin-bottom: 0px !important;
   background-color: #0c1a1e !important;
   font-family: 'Open Sans', sans-serif !important;
+=======
+  background-image: linear-gradient(rgba(12, 26, 30, 0.97), rgba(12, 26, 30, 0.97)), url("./images/footer.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin-top: 75px;
+  background-color: #0c1a1e;
+  min-height: 150px;
+  font-family: 'Open Sans', sans-serif;
+>>>>>>> modal
 }
 
 .footerleft {
@@ -438,7 +458,10 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+<<<<<<< HEAD
   bottom: 0 !important;
+=======
+>>>>>>> modal
 }
 
 .copyright p {
