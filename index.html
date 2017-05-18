@@ -2,158 +2,167 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DriveCX</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DriveCX</title>
 
-    <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="resources/images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="resources/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/resources/images/favicon/manifest.json">
+  <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="resources/images/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="resources/images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/resources/images/favicon/manifest.json">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-    <!-- Boostrap Datatoggle -->
-    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <!-- Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <!-- Boostrap Datatoggle -->
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+  <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
-    <!-- Custom Styles -->
-    <link rel="stylesheet" type="text/css" href="resources/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" type="text/css" href="resources/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
-    <!-- Custom Script -->
-    <script type="text/javascript" src="resources/script.js"></script>
-    <script type="text/javascript" src="resources/typed.js"></script>
+  <!-- Custom Script -->
+  <script type="text/javascript" src="resources/script.js"></script>
+  <script type="text/javascript" src="resources/typed.js"></script>
 
-    <!--Firebase-->
-    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-storage.js"></script>
+  <!--Firebase-->
+  <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase-storage.js"></script>
 
 </head>
 
 <body>
 
-    <div class="container">
-        <div class="col-md-6">
-            <div style="margin-top:-45px;">
-                <h2 style="color:#EEE;" class="text-center">
-                    <span>
+  <div class="container">
+    <div class="col-md-6">
+      <div style="margin-top:-45px;">
+        <h2 style="color:#EEE;" class="text-center">
+          <span>
                             Tell us a little about your restaurant and </br> we'll show you how much more you could be earning.
                         </span>
-                </h2>
-                </br>
-                <div class="animated zoomInLeft" id="animatedBubble">
-                    <div class='quote'>
-                        <div class="col-md-4">
-                            <img class='img-responsive' style="width:200px;" src='resources/images/man_material.png'>
-                        </div>
-                        <div class="col-md-8">
-                            <div class='speech-bubble left'>
-                                <p style="color: black!important">
-                                    <img style="width:25px;" src='resources/images/driveSmallLogo.png' alt=""> Michael Lenizky
-                                    <span class='time-ago'>
+        </h2>
+        </br>
+        <div class="animated zoomInLeft" id="animatedBubble">
+          <div class='quote'>
+            <div class="col-md-4">
+              <img class='img-responsive' style="width:200px;" src='resources/images/man_material.png'>
+            </div>
+            <div class="col-md-8">
+              <div class='speech-bubble left'>
+                <p style="color: black!important">
+                  <img style="width:25px;" src='resources/images/driveSmallLogo.png' alt=""> Michael Lenizky
+                  <span class='time-ago'>
                                             Manager of Customer Success
                                         </span>
-                                </p>
-                                <blockquote>
-                                    <div class="element"></div>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </p>
+                <blockquote>
+                  <div class="element"></div>
+                </blockquote>
+              </div>
             </div>
+          </div>
         </div>
-
-
-
-        <div class="col-md-6 ">
-            <div style="margin-bottom:25px; margin-top:-85px; color: #757575;">
-                <div class="card card-container ">
-                    <img src="resources/images/logo.png " class="img-responsive container " style="width:90%; margin-top:-25px;" alt=" "></img>
-                    <p id="profile-name " class="profile-name-card "><i>ROI Calculator</i></p>
-                    </br>
-                    <form action="success.php " method="post " class="form-signin ">
-
-                        <div class="text-center ">
-
-                            <input type="checkbox" id="cf-full-service" name="cf-full-service" data-toggle="toggle" data-on="Quick" data-off="Full" data-onstyle="info" data-offstyle="warning">
-                        </div>
-                        </br>
-                        <label for="cf-averageCheck ">Average Check</label>
-                        <input type="text " id="cf-averageCheck " name="cf-averageCheck " class="form-control " placeholder="Average Check " required>
-
-                        <label for="cf-averageCustNo ">Average # of Customer/Week</label>
-                        <input type="text " id="cf-averageCustNo " name="cf-averageCustNo " class="form-control " placeholder="Average # of Customers/Week " required>
-
-                        <label for="cf-fName ">First Name</label>
-                        <input type="text " id="cf-fName " name="cf-fName " class="form-control " placeholder="First name " required pattern="[a-zA-Z0-9 ]+ ">
-
-                        <label for="cf-lName ">Last Name</label>
-                        <input type="text " id="cf-lName " name="cf-lName " class="form-control " placeholder="Last name " required pattern="[a-zA-Z0-9 ]+ ">
-
-                        <label for="cf-email ">Email</label>
-                        <input type="text " id="cf-email " name="cf-email " class="form-control " placeholder="Email " required>
-
-                        <label for="cf-companyName ">Company Name</label>
-                        <input type="text " id="cf-companyName " name="cf-companyName " class="form-control " placeholder="companyName " required>
-
-                        <input type="submit " name="cf-submitted " class="btn btn-lg btn-success btn-block btn-signin " value="Show me the money ">
-
-                    </form>
-                </div>
-            </div>
-
-        </div>
+      </div>
     </div>
 
-    <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
-    <!--footer start from here-->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6 footerleft">
-                    <div class="logofooter">
-                        <img src="resources/images/driveSmallLogo.png " class="img-responsive container" style="width:30%; margin-bottom:20px;" alt=" "></img>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 paddingtop-bottom">
-                    <h6 class="heading7">LISTEN</h6>
-                </div>
-                <div class="col-md-3 col-sm-6 paddingtop-bottom">
-                    <h6 class="heading7">RESPOND</h6>
-                </div>
-                <div class="col-md-3 col-sm-6 paddingtop-bottom">
-                    <h6 class="heading7">GROW</h6>
-                </div>
-                <div class="col-md-12">
-                    <!--add-->
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--footer start from here-->
 
-    <div class="copyright">
-        <div class="container">
-            <div class="col-md-6">
-                <p>© Copyright 2015 Drive Business Intelligence - all rights reserved</p>
+
+    <div class="col-md-6 ">
+      <div style="margin-bottom:25px; margin-top:-85px; color: #757575;">
+        <div class="card card-container ">
+          <img src="resources/images/logo.png " class="img-responsive container " style="width:90%; margin-top:-25px;" alt=" "></img>
+          <p id="profile-name " class="profile-name-card "><i>ROI Calculator</i></p>
+          </br>
+          <form action="success.php " method="post " class="form-signin ">
+
+            <div class="text-center ">
+
+              <input type="checkbox" id="cf-full-service" name="cf-full-service" data-toggle="toggle" data-on="Quick" data-off="Full" data-onstyle="info" data-offstyle="warning">
             </div>
-            <div class="col-md-6">
-                <p style="font-size:0.8em">DRIVE Business Intelligence&#174; and DriveBI&#8482; are marks owned by Drive Business Intelligence</p>
-            </div>
+            </br>
+            <label for="cf-averageCheck ">Average Check</label>
+            <input type="text " id="cf-averageCheck " name="cf-averageCheck " class="form-control " placeholder="Average Check " required>
+
+            <label for="cf-averageCustNo ">Average # of Customer/Week</label>
+            <input type="text " id="cf-averageCustNo " name="cf-averageCustNo " class="form-control " placeholder="Average # of Customers/Week " required>
+
+            <label for="cf-fName ">First Name</label>
+            <input type="text " id="cf-fName " name="cf-fName " class="form-control " placeholder="First name " required pattern="[a-zA-Z0-9 ]+ ">
+
+            <label for="cf-lName ">Last Name</label>
+            <input type="text " id="cf-lName " name="cf-lName " class="form-control " placeholder="Last name " required pattern="[a-zA-Z0-9 ]+ ">
+
+            <label for="cf-email ">Email</label>
+            <input type="text " id="cf-email " name="cf-email " class="form-control " placeholder="Email " required>
+
+            <label for="cf-companyName ">Company Name</label>
+            <input type="text " id="cf-companyName " name="cf-companyName " class="form-control " placeholder="companyName " required>
+
+            <input type="submit " name="cf-submitted " class="btn btn-lg btn-success btn-block btn-signin " value="Show me the money ">
+
+          </form>
         </div>
+      </div>
+
     </div>
+  </div>
+
+  <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+  <!--footer start from here-->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 footerleft">
+          <div class="logofooter">
+            <img src="resources/images/logoBlack.png " class="img-responsive container" style="margin-bottom:20px;" alt=" "></img>
+          </div>
+          <div class="text-center center-block">
+            <a href="#"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+            <a href="#"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+            <a href="#"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+            <a href="#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6 paddingtop-bottom">
+          <h6 class="heading7">LISTEN</h6>
+        </div>
+        <div class="col-md-3 col-sm-6 paddingtop-bottom">
+          <h6 class="heading7">RESPOND</h6>
+        </div>
+        <div class="col-md-3 col-sm-6 paddingtop-bottom">
+          <h6 class="heading7">GROW</h6>
+        </div>
+        <div class="col-md-8 offset-md-4">
+          <div style="font-size:0.95em; text-align:center; margin-bottom:5px;">
+            <p>Drive CX builds customer loyalty, improves team productivity & increases marketing returns by connecting customers & teams to deliver exceptional customer experiences.</p>
+            <p>
+              Visit <a href="www.drivecx.com">www.drivecx.com</a> to learn more
+              <p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!--footer start from here-->
+
+  <div class="copyright">
+    <div class="col-md-6">
+      <p>© Copyright 2015 Drive Business Intelligence - all rights reserved</p>
+    </div>
+    <div class="col-md-6">
+      <p id="footer_note" style="text-align:right;">DRIVE Business Intelligence&#174; and DriveBI&#8482; are marks owned by Drive Business Intelligence</p>
+    </div>
+  </div>
 
 
 </body>
