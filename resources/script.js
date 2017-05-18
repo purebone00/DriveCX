@@ -54,7 +54,7 @@ function loadFullForm() {
 
 var questionHeader = "Hello There?";
 var answer1 = "Do you know how much your restaurant is capable of earning?";
-var answer2 = "We Can tell you! \n Simply tell us about your restaurant and we will send you a custom ROI report absolutely free!";
+var answer2 = "We can tell you! \n Simply tell us about your restaurant and we will send you a custom ROI report absolutely free!";
 
 var info = "Our ROI calculations are based on average customer engagement rates and may not be the same for every restaurant."
 var info2 = "DRIVE can't guarantee these numbers, but we'll help you to acheive the best outcomes for your restaurants.";
