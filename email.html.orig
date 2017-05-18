@@ -138,18 +138,30 @@
 			text-align:left;
 		}
 		#templateHeader{
+<<<<<<< HEAD
+			background-color:#f7f7f7;
+=======
 			background-color:#F7F7F7;
+>>>>>>> modal
 			background-image:none;
 			background-repeat:no-repeat;
 			background-position:center;
 			background-size:cover;
 			border-top:0;
 			border-bottom:0;
+<<<<<<< HEAD
+			padding-top:17px;
+			padding-bottom:17px;
+		}
+		.headerContainer{
+			background-color:#transparent;
+=======
 			padding-top:54px;
 			padding-bottom:54px;
 		}
 		.headerContainer{
 			background-color:transparent;
+>>>>>>> modal
 			background-image:none;
 			background-repeat:no-repeat;
 			background-position:center;
@@ -172,8 +184,13 @@
 			text-decoration:underline;
 		}
 		#templateBody{
+<<<<<<< HEAD
+			background-color:#transparent;
+			background-image:url("https://gallery.mailchimp.com/b8a4e8c0efeb65ee825682bf4/images/c6d212a0-8d9d-4541-a86a-1d24e1c8dd72.jpg");
+=======
 			background-color:#ffffff;
 			background-image:url("https://gallery.mailchimp.com/0e1617b753326891426ed01e6/_compresseds/d85f0b97-fd43-457c-954d-703953723297.jpg");
+>>>>>>> modal
 			background-repeat:no-repeat;
 			background-position:center;
 			background-size:cover;
@@ -194,7 +211,11 @@
 			padding-bottom:0;
 		}
 		.bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{
+<<<<<<< HEAD
+			color:#222222;
+=======
 			color:#808080;
+>>>>>>> modal
 			font-family:Helvetica;
 			font-size:16px;
 			line-height:150%;
@@ -370,7 +391,11 @@
 			line-height:150% !important;
 		}
 
+<<<<<<< HEAD
+}</style><!--[if !mso]><!--><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet"><!--<![endif]--></head>
+=======
 }</style></head>
+>>>>>>> modal
     <body style="height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
         <center>
             <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;">
@@ -379,7 +404,11 @@
                         <!-- BEGIN TEMPLATE // -->
                         <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
 							<tr>
+<<<<<<< HEAD
+								<td align="center" valign="top" id="templateHeader" data-template-container="" style="background:#f7f7f7 none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #f7f7f7;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 17px;padding-bottom: 17px;">
+=======
 								<td align="center" valign="top" id="templateHeader" data-template-container="" style="background:#F7F7F7 none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #F7F7F7;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 54px;padding-bottom: 54px;">
+>>>>>>> modal
 									<!--[if gte mso 9]>
 									<table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
 									<tr>
@@ -387,7 +416,11 @@
 									<![endif]-->
 									<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
 										<tr>
+<<<<<<< HEAD
+                                			<td valign="top" class="headerContainer" style="background:#transparent none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #transparent;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=======
                                 			<td valign="top" class="headerContainer" style="background:transparent none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: transparent;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnImageBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+>>>>>>> modal
     <tbody class="mcnImageBlockOuter">
             <tr>
                 <td valign="top" style="padding: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnImageBlockInner">
@@ -396,7 +429,11 @@
                             <td class="mcnImageContent" valign="top" style="padding-right: 9px;padding-left: 9px;padding-top: 0;padding-bottom: 0;text-align: center;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                                 
                                     <a href="http://www.drivecx.com/" title="" class="" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<<<<<<< HEAD
+                                        <img align="center" alt="" src="https://gallery.mailchimp.com/b8a4e8c0efeb65ee825682bf4/images/10df18a0-de79-41d0-8aec-fa95af62aba9.png" width="564" style="max-width: 1050px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
+=======
                                         <img align="center" alt="" src="https://gallery.mailchimp.com/0e1617b753326891426ed01e6/images/bfe9fdc4-fa56-4a56-b172-6e50c1c43ef0.png" width="564" style="max-width: 1050px;padding-bottom: 0;display: inline !important;vertical-align: bottom;border: 0;height: auto;outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;" class="mcnImage">
+>>>>>>> modal
                                     </a>
                                 
                             </td>
@@ -416,7 +453,11 @@
 								</td>
                             </tr>
 							<tr>
+<<<<<<< HEAD
+								<td align="center" valign="top" id="templateBody" data-template-container="" style="background:#transparent url(&quot;https://gallery.mailchimp.com/b8a4e8c0efeb65ee825682bf4/images/c6d212a0-8d9d-4541-a86a-1d24e1c8dd72.jpg&quot;) no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #transparent;background-image: url(https://gallery.mailchimp.com/b8a4e8c0efeb65ee825682bf4/images/c6d212a0-8d9d-4541-a86a-1d24e1c8dd72.jpg);background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 27px;padding-bottom: 54px;">
+=======
 								<td align="center" valign="top" id="templateBody" data-template-container="" style="background:#ffffff url(&quot;https://gallery.mailchimp.com/0e1617b753326891426ed01e6/_compresseds/d85f0b97-fd43-457c-954d-703953723297.jpg&quot;) no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #ffffff;background-image: url(https://gallery.mailchimp.com/0e1617b753326891426ed01e6/_compresseds/d85f0b97-fd43-457c-954d-703953723297.jpg);background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 27px;padding-bottom: 54px;">
+>>>>>>> modal
 									<!--[if gte mso 9]>
 									<table align="center" border="0" cellspacing="0" cellpadding="0" width="600" style="width:600px;">
 									<tr>
@@ -424,7 +465,29 @@
 									<![endif]-->
 									<table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" class="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;max-width: 600px !important;">
 										<tr>
+<<<<<<< HEAD
+                                			<td valign="top" class="bodyContainer" style="background:#transparent none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #transparent;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class="mcnDividerBlockOuter">
+        <tr>
+            <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 9px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--            
+                <td class="mcnDividerBlockInner" style="padding: 18px;">
+                <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=======
                                 			<td valign="top" class="bodyContainer" style="background:#transparent none no-repeat center/cover;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #transparent;background-image: none;background-repeat: no-repeat;background-position: center;background-size: cover;border-top: 0;border-bottom: 0;padding-top: 0;padding-bottom: 0;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+>>>>>>> modal
     <tbody class="mcnTextBlockOuter">
         <tr>
             <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
@@ -439,6 +502,22 @@
                 <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
                     <tbody><tr>
                         
+<<<<<<< HEAD
+                        <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #FFFFFF;font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;font-size: 16px;line-height: 150%;text-align: left;">
+                        
+                            <h1 class="null" style="text-align: left;display: block;margin: 0;padding: 0;color: #222222;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 150%;letter-spacing: normal;"><span style="color:#FFFFFF"><span style="font-size:24px"><strong>Dear&nbsp;</strong>vince wong</span></span></h1>
+
+<p dir="ltr" style="text-align: center;color: #FFFFFF;font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 16px;line-height: 150%;"><span style="font-size:24px">Your ROI: 1 X</span></p>
+<span style="font-size:14px"><strong>OFFER REDEMPTION</strong></span>
+
+<p dir="ltr" style="color: #FFFFFF;font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 16px;line-height: 150%;text-align: left;"><span style="font-size:14px"><strong id="docs-internal-guid-15aee5f2-eed3-45f1-71da-1a2130b8dd3d">On average, clients using DRIVE are receiving feedback from over 50% of their tables.</strong></span></p>
+<span style="font-size:14px"> &nbsp;</span>
+
+<p dir="ltr" style="color: #FFFFFF;font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 16px;line-height: 150%;text-align: left;"><span style="font-size:14px"><strong id="docs-internal-guid-15aee5f2-eed3-45f1-71da-1a2130b8dd3d">38% of those go on to receive a special offer in exchange for more detailed feedback.</strong></span></p>
+<span style="font-size:14px"> &nbsp;</span>
+
+<p dir="ltr" style="color: #FFFFFF;font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 16px;line-height: 150%;text-align: left;"><span style="font-size:14px"><strong id="docs-internal-guid-15aee5f2-eed3-45f1-71da-1a2130b8dd3d">If only 5% of this gr</strong></span><span style="font-size:14px"><strong>oup returned to claim their reward on a future visit, this would represent an additional $35,816 in annual sales for this single location within the Glowbal Group, an ROI of 7X.</strong></span><br>
+=======
                         <td valign="top" class="mcnTextContent" style="padding: 0px 18px 9px;color: #FFFFFF;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;">
                         
                             <h1 style="display: block;margin: 0;padding: 0;color: #222222;font-family: Helvetica;font-size: 40px;font-style: normal;font-weight: bold;line-height: 150%;letter-spacing: normal;text-align: center;"><span style="color:#FFFFFF"><strong>Dear&nbsp;</strong>j c</span></h1>
@@ -453,17 +532,27 @@
 &nbsp;
 
 <p dir="ltr" style="color: #FFFFFF;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"><strong id="docs-internal-guid-15aee5f2-eed3-45f1-71da-1a2130b8dd3d">If only 5% of this gr</strong><strong>oup returned to claim their reward on a future visit, this would represent an additional $35,816 in annual sales for this single location within the Glowbal Group, an ROI of 7X.</strong><br>
+>>>>>>> modal
 <br>
 <br>
 <strong id="docs-internal-guid-15aee5f2-eee1-381f-0d21-04fedd86c039">VIP CUSTOMERS </strong></p>
 &nbsp;
 
+<<<<<<< HEAD
+<p dir="ltr" style="color: #FFFFFF;font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 16px;line-height: 150%;text-align: left;"><strong id="docs-internal-guid-15aee5f2-eee1-381f-0d21-04fedd86c039">Typically, of the customers who provide Quick Ratings, 18% will also opt in to a brand\u2019s VIP program.</strong></p>
+&nbsp;
+
+<p dir="ltr" style="color: #FFFFFF;font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 16px;line-height: 150%;text-align: left;"><strong id="docs-internal-guid-15aee5f2-eee1-381f-0d21-04fedd86c039">This represents about 3,652 new names added to Glowbal\u2019s VIP list this year from a single location.</strong></p>
+
+<p dir="ltr" style="color: #FFFFFF;font-family: &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-size: 16px;line-height: 150%;text-align: left;"><br>
+=======
 <p dir="ltr" style="color: #FFFFFF;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"><strong id="docs-internal-guid-15aee5f2-eee1-381f-0d21-04fedd86c039">Typically, of the customers who provide Quick Ratings, 18% will also opt in to a brand&rsquo;s 2019s VIP program.</strong></p>
 &nbsp;
 
 <p dir="ltr" style="color: #FFFFFF;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"><strong id="docs-internal-guid-15aee5f2-eee1-381f-0d21-04fedd86c039">This represents about 3,652 new names added to Glowbal&rsquo;s 2019s VIP list this year from a single location.</strong></p>
 
 <p dir="ltr" style="color: #FFFFFF;margin: 10px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: left;"><br>
+>>>>>>> modal
 <strong id="docs-internal-guid-15aee5f2-eee1-381f-0d21-04fedd86c039">Of this highly valuable group of regular customers, if 25% of them return only 1 additional time per year, this represents a sales increase of $84,935, &nbsp;an ROI of 15X.</strong></p>
 <br>
 <br>
@@ -504,7 +593,11 @@
 </table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
     <tbody class="mcnDividerBlockOuter">
         <tr>
+<<<<<<< HEAD
+            <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 18px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+=======
             <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 9px 18px 0px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+>>>>>>> modal
                 <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
                     <tbody><tr>
                         <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
@@ -527,7 +620,11 @@
                     <tbody>
                         <tr>
                             <td align="center" valign="middle" class="mcnButtonContent" style="font-family: Helvetica;font-size: 18px;padding: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+<<<<<<< HEAD
+                                <a class="mcnButton " title="Contact Us" href="mailto:drivecx@gmail.com?subject=Show%20me%20my%20money&amp;body=Please%20contact%20me." target="_self" style="font-weight: bold;letter-spacing: -0.5px;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;">Contact Us</a>
+=======
                                 <a class="mcnButton " title="Contact Us" href="mailto:support@drivecx.com?subject=My%20ROI&amp;body=Hi%20there%2C%0A%0APlease%20contact%20me%2C%20so%20I%20can%20maximize%20my%20ROI." target="_self" style="font-weight: bold;letter-spacing: -0.5px;line-height: 100%;text-align: center;text-decoration: none;color: #FFFFFF;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;display: block;">Contact Us</a>
+>>>>>>> modal
                             </td>
                         </tr>
                     </tbody>
@@ -770,6 +867,18 @@
                         
                         <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #FFFFFF;font-family: Helvetica;font-size: 12px;line-height: 150%;text-align: center;">
                         
+<<<<<<< HEAD
+                            <em>Copyright \u00a9 *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em><br>
+*|IFNOT:ARCHIVE_PAGE|* *|LIST:DESCRIPTION|*<br>
+<br>
+<strong>Our mailing address is:</strong><br>
+*|HTML:LIST_ADDRESS_HTML|* *|END:IF|*<br>
+<br>
+Want to change how you receive these emails?<br>
+You can <a href="*|UPDATE_PROFILE|*" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #FFFFFF;font-weight: normal;text-decoration: underline;">update your preferences</a> or <a href="*|UNSUB|*" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #FFFFFF;font-weight: normal;text-decoration: underline;">unsubscribe from this list</a><br>
+<br>
+*|IF:REWARDS|* *|HTML:REWARDS|* *|END:IF|*
+=======
                             <em>Copyright &rsquo;s 00a9 *|CURRENT_YEAR|* *|LIST:COMPANY|*, All rights reserved.</em>
 <br>
 *|IFNOT:ARCHIVE_PAGE|*
@@ -787,6 +896,7 @@
     <br>
     *|IF:REWARDS|* *|HTML:REWARDS|*
 *|END:IF|*
+>>>>>>> modal
                         </td>
                     </tr>
                 </tbody></table>
