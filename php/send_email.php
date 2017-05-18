@@ -185,7 +185,7 @@ if(isset($_POST['cf-submitted'])){
 		}
 		else {	
 	
-		/**
+		
 		// If email has been process for sending, display a success message
 		if ( mail( $to, $subject, $html , $headers) ) {
 			echo '<div>';
@@ -197,7 +197,7 @@ if(isset($_POST['cf-submitted'])){
 	
 		send_deal($email);
 
-		*/
+		
 		
 		/**
 	
