@@ -36,8 +36,6 @@ public class CompanyName_Symbols {
 		driver = new ChromeDriver();
     
     baseUrl = "https://www.vince.life/drive_static/";
-   
-    
   }
 
   @Test
