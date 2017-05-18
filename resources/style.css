@@ -191,6 +191,10 @@ html {
   display: inline;
 }
 
+.element2 {
+  display: inline;
+}
+
 .quote {
   margin: 2ex 1em;
   width: 600px;
@@ -315,6 +319,11 @@ html {
 #animatedBubble {
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
+}
+
+#animatedBubble2 {
+  -webkit-animation-delay: 16s;
+  -moz-animation-delay: 16s;
 }
 
 @media screen and (max-width: 1024px) {
