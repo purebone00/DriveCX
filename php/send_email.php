@@ -17,6 +17,9 @@ $html;
 //Get's mail chimp template by $template_id
 function send_mail(){
 
+	$variable = $_POST['variable'];
+	echo $variable;
+	
 	$fullService = $_POST["cf-full-service"];
 
 	$driveSubCost = 199;
@@ -36,9 +39,6 @@ function send_mail(){
 	$email   = $_POST["cf-email"];
 	$companyName = $_POST["cf-companyName"];
 
-	
-	
-	
 	$averageSalesWeek = $avg_check * $avg_custNo;
 	$quickRating = ($quickRatingPercent * $avg_custNo) / $avgTableSize;
 	$annualVIPsignups = $quickRating * $vipPercentile * 52;
