@@ -283,7 +283,7 @@ function init() {
 
 window.onload = function() {
 
-  //init();
+  init();
   loadFullForm();
   loadQuickForm();
   loadAPIKeys();
