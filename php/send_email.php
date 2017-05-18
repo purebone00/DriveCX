@@ -16,6 +16,7 @@ $html;
 
 //Get's mail chimp template by $template_id
 function send_mail(){
+
 	$variable = $_POST['variable'];
 	echo $variable;
 	

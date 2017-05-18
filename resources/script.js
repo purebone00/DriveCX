@@ -72,9 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
   setTimeout(function() {
     Typed.new('.element2', {
       strings: [info, info2],
-      typeSpeed: 3
+      typeSpeed: 2
     });
-  }, 15000);
+  }, 16850);
 });
 
 window.onload = function() {

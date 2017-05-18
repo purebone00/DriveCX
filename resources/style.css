@@ -322,12 +322,15 @@ html {
 }
 
 #animatedBubble2 {
-  -webkit-animation-delay: 16s;
-  -moz-animation-delay: 16s;
+  -webkit-animation-delay: 15.5s;
+  -moz-animation-delay: 15.5s;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1199px) {
   #animatedBubble {
+    display: none;
+  }
+  #animatedBubble2 {
     display: none;
   }
   h2 {
@@ -337,14 +340,15 @@ html {
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 footer {
-  background-image: linear-gradient(rgba(12, 26, 30, 0.97), rgba(12, 26, 30, 0.97)), url("./images/footer.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  margin-top: 75px;
-  background-color: #0c1a1e;
-  min-height: 150px;
-  font-family: 'Open Sans', sans-serif;
+  bottom: 0 !important;
+  background-image: linear-gradient(rgba(12, 26, 30, 0.97), rgba(12, 26, 30, 0.97)), url("./images/footer.jpg") !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  margin-top: 20px !important;
+  margin-bottom: 0px !important;
+  background-color: #0c1a1e !important;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 .footerleft {
@@ -430,6 +434,7 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  bottom: 0 !important;
 }
 
 .copyright p {
