@@ -15,6 +15,11 @@ html {
   background-size: cover;
   background-attachment: fixed;
   color: white !important;
+  height: 100%;
+}
+
+.img-circle {
+  border-radius: 50%;
 }
 
 .typed-cursor {
@@ -91,8 +96,8 @@ html {
   background-color: #F7F7F7;
   /* just in case there no content*/
   padding: 20px 25px 30px;
-  margin: 0 auto 25px;
-  margin-top: 50px;
+  margin: 0 auto 15px;
+  margin-top: 40px;
   /* shadows and rounded borders */
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -100,6 +105,21 @@ html {
   -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card2 {
+  background-color: #F7F7F7;
+  /* just in case there no content*/
+  padding: 20px 15px 20px;
+  margin: 0 auto 0px;
+  margin-top: 0px;
+  /* shadows and rounded borders */
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
 }
 
 .profile-img-card {
@@ -188,6 +208,10 @@ html {
 }
 
 .element {
+  display: inline;
+}
+
+.element2 {
   display: inline;
 }
 
@@ -317,8 +341,16 @@ html {
   -moz-animation-delay: 1s;
 }
 
-@media screen and (max-width: 1024px) {
+#animatedBubble2 {
+  -webkit-animation-delay: 9s;
+  -moz-animation-delay: 9s;
+}
+
+@media screen and (max-width: 1199px) {
   #animatedBubble {
+    display: none;
+  }
+  #animatedBubble2 {
     display: none;
   }
   h2 {
@@ -328,19 +360,20 @@ html {
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
 footer {
-  background-image: linear-gradient(rgba(12, 26, 30, 0.97), rgba(12, 26, 30, 0.97)), url("./images/footer.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  margin-top: 75px;
-  background-color: #0c1a1e;
-  min-height: 150px;
-  font-family: 'Open Sans', sans-serif;
+  bottom: 0 !important;
+  background-image: linear-gradient(rgba(12, 26, 30, 0.97), rgba(12, 26, 30, 0.97)), url("./images/footer.jpg") !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  background-color: #0c1a1e !important;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 .footerleft {
-  margin-top: 50px;
-  padding: 0 36px;
+  margin-top: 1%;
+  padding: 0 2%;
 }
 
 .logofooter {
@@ -363,7 +396,7 @@ footer {
 }
 
 .paddingtop-bottom {
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .footer-ul {
@@ -421,6 +454,7 @@ footer {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  bottom: 0 !important;
 }
 
 .copyright p {
@@ -433,7 +467,7 @@ footer {
 .heading7 {
   font-size: 21px;
   font-weight: 700;
-  color: #d9d6d6;
+  color: #FFB142;
   margin-bottom: 22px;
 }
 
@@ -527,4 +561,8 @@ footer {
 
 #social-em:hover {
   color: #f39c12;
+}
+
+#disclaimer{
+	margin-top: 5%;
 }

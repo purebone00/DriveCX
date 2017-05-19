@@ -37,9 +37,7 @@
 
 <body>
 
-
 	<?php
-	
 							
 		$f_name = $_POST["cf-fName"];
 		$l_name = $_POST["cf-lName"];
@@ -56,10 +54,10 @@
 	<div class="class="col-sm-12" style="max-width: 550px; margin: auto;
     width: 50%;">
 	<div class ="row" >
-	 <div class="animated zoomInLeft" style="-webkit-animation-delay: 0s;">
+	 <div class="animated zoomInLeft" style="-webkit-animation-delay: 1s;">
                         <div class='quote'>
                             <div >
-                                <img class='img-responsive' style="width:200px;" src='resources/images/man_material.png'>
+                                <img class='img-responsive img-circle' style="width:200px;" src='resources/images/michael.png'>
                             </div>
                             <div >
                                 <div class='speech-bubble left'>
@@ -70,7 +68,7 @@
                                         </span>
                                     </p>
                                     <blockquote>
-                                        <div class="element"></div>
+                                        <div style="display:inline;" class="element"></div>
                                     </blockquote>
                                 </div>
                             </div>
@@ -85,22 +83,19 @@
                             <img src="resources/images/logo.png" class="img-responsive container" alt=""></img>
                             <h1>Information sent:</h1>
 							<?php
-							
-							
-							echo '<p>Email address:'. $email.'</p>';
-							echo '<p>Information sent:</p>';
-							echo '<p>Average check: '. $avg_check.'</p>';
-							echo '<p>Average customer number: '. $avg_custNo.'</p>';
+							echo '<br>';
 							echo '<p>First name: '. $f_name.'</p>';
 							echo '<p>Last name: '. $l_name.'</p>';
-							echo '<p>Company name: '. $companyName.'</p>';
-							
-								
+							echo '<p>Email address: '. $email.'</p>';
+							echo '<p>Company Name: ' . $companyName . '</p>';
+							echo '<br>';
+							echo '<p>Average check: '. $avg_check.'</p>';
+							echo '<p>Average customer number: '. $avg_custNo.'</p>';
+	
 							include 'php/send_email.php';
 							include 'php/send_deal.php';
-							
 							send_mail();
-							
+														
 							?>
 							
                         </div>
