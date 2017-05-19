@@ -341,8 +341,8 @@ html {
 }
 
 #animatedBubble2 {
-  -webkit-animation-delay: 15.5s;
-  -moz-animation-delay: 15.5s;
+  -webkit-animation-delay: 7s;
+  -moz-animation-delay: 7s;
 }
 
 @media screen and (max-width: 1199px) {
