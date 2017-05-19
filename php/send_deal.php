@@ -2,7 +2,7 @@
 
 //this function sends to pipedrive
 function send_deal($email) {
-	$service_url = 'https://api.pipedrive.com/v1/deals?api_token=538669d2b75c6b2fb22aa2e91f4af8fbb1e3071c';
+	$service_url = 'https://api.pipedrive.com/v1/deals?api_token=ad92c95c3a68f498c69190b4dae80dc522c6c5b4';
 	$curl = curl_init($service_url);
 	$curl_post_data = array(
 			'title' => 'New lead from landing page: '. $email,
@@ -23,7 +23,7 @@ function send_deal($email) {
 	if (isset($decoded->response->status) && $decoded->response->status == 'ERROR') {
 		die('error occured: ' . $decoded->response->errormessage);
 	}
-	echo 'Message sent to Pipeline, expect to hear from us soon:)';
+	//echo 'Message sent to Pipeline, expect to hear from us soon:)';
 
 		
 }

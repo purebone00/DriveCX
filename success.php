@@ -37,7 +37,9 @@
 
 <body>
 
+
 	<?php
+	
 							
 		$f_name = $_POST["cf-fName"];
 		$l_name = $_POST["cf-lName"];
@@ -84,6 +86,7 @@
                             <h1>Information sent:</h1>
 							<?php
 							
+							
 							echo '<p>Email address:'. $email.'</p>';
 							echo '<p>Information sent:</p>';
 							echo '<p>Average check: '. $avg_check.'</p>';
@@ -91,6 +94,12 @@
 							echo '<p>First name: '. $f_name.'</p>';
 							echo '<p>Last name: '. $l_name.'</p>';
 							echo '<p>Company name: '. $companyName.'</p>';
+							
+								
+							include 'php/send_email.php';
+							include 'php/send_deal.php';
+							
+							send_mail();
 							
 							?>
 							
