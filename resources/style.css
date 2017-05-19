@@ -570,3 +570,7 @@ footer {
 a:link {
     color: #FFB142;
 }
+
+a:visited { 
+    color: #FFB142;
+}
