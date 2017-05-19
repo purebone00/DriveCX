@@ -566,3 +566,7 @@ footer {
 #disclaimer{
 	margin-top: 5%;
 }
+
+a:link {
+    color: #FFB142;
+}

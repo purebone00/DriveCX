@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DriveCX</title>
 
-    <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="resources/images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="resources/images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicon/LogoMark_16.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="resources/images/favicon/LogoMark_32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="resources/images/favicon/LogoMark_96.png">
     <link rel="manifest" href="/resources/images/favicon/manifest.json">
 
     <!-- Latest compiled and minified CSS -->
