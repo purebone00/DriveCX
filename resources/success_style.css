@@ -267,10 +267,6 @@ max-width: 450px; margin: auto;
     margin-top: 2ex;
 }
 
-.img-circle {
-  border-radius: 50%;
-}
-
 .quote .speech-bubble.top:after,
 
 
@@ -299,16 +295,4 @@ max-width: 450px; margin: auto;
 .quote .speech-bubble p {
     line-height: 1.3em;
     margin: 0;
-}
-
-
-
-.profile-img-card {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 10px;
-  display: block;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
 }
