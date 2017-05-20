@@ -1,6 +1,0 @@
-
-RewriteEngine on
-RewriteCond %{HTTP_HOST} ^drive\.vince\.life$ [OR]
-RewriteCond %{HTTP_HOST} ^www\.drive\.vince\.life$
-RewriteRule ^/?$ "vince\.life\/drive_static" [R=301,L]
-
