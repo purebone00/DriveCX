@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
       strings: [questionHeader, answer1],
 	  typeSpeed: 2,
 	  backDelay: 2000
-	  
     });
   }, 2300);
 });
@@ -76,6 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
       startDelay: 2000,
 	  backDelay: 2000,
 	  typeSpeed: 2
+
     });
   }, 8000);
 });

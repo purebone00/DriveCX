@@ -22,6 +22,10 @@ html {
   border-radius: 50%;
 }
 
+.img-circle {
+  border-radius: 50%;
+}
+
 .typed-cursor {
   opacity: 1;
   -webkit-animation: blink 0.7s infinite;
