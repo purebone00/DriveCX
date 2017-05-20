@@ -15,6 +15,11 @@ html {
   background-size: cover;
   background-attachment: fixed;
   color: white !important;
+  height: 100%;
+}
+
+.img-circle {
+  border-radius: 50%;
 }
 
 .img-circle {
@@ -341,8 +346,8 @@ html {
 }
 
 #animatedBubble2 {
-  -webkit-animation-delay: 7s;
-  -moz-animation-delay: 7s;
+  -webkit-animation-delay: 9s;
+  -moz-animation-delay: 9s;
 }
 
 @media screen and (max-width: 1199px) {
@@ -364,15 +369,15 @@ footer {
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-attachment: fixed !important;
-  margin-top: 20px !important;
+  margin-top: 0px !important;
   margin-bottom: 0px !important;
   background-color: #0c1a1e !important;
   font-family: 'Open Sans', sans-serif !important;
 }
 
 .footerleft {
-  margin-top: 50px;
-  padding: 0 36px;
+  margin-top: 1%;
+  padding: 0 2%;
 }
 
 .logofooter {
@@ -395,7 +400,7 @@ footer {
 }
 
 .paddingtop-bottom {
-  margin-top: 50px;
+  margin-top: 0px;
 }
 
 .footer-ul {
@@ -466,7 +471,7 @@ footer {
 .heading7 {
   font-size: 21px;
   font-weight: 700;
-  color: #d9d6d6;
+  color: #FFB142;
   margin-bottom: 22px;
 }
 
@@ -560,4 +565,16 @@ footer {
 
 #social-em:hover {
   color: #f39c12;
+}
+
+#disclaimer{
+	margin-top: 5%;
+}
+
+a:link {
+    color: #FFB142;
+}
+
+a:visited { 
+    color: #FFB142;
 }

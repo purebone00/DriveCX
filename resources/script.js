@@ -55,14 +55,15 @@ function loadFullForm() {
 var questionHeader = "Hello There!";
 var answer1 = "Do you know how much your restaurant is capable of earning?";
 
-var info = "We can tell you! \n Simply tell us about your restaurant and we will send you a custom ROI report absolutely free!";
-var info2 = "Our ROI calculations are based on average customer engagement rates and may not be the same for every restaurant.";
+var info = "We can tell you!";
+var info1 = "Simply tell us about your restaurant and we will send you a custom ROI report absolutely FREE!"
 
 document.addEventListener('DOMContentLoaded', function() {
   setTimeout(function() {
     Typed.new('.element', {
       strings: [questionHeader, answer1],
-      typeSpeed: 2
+	  typeSpeed: 2,
+	  backDelay: 2000
     });
   }, 2300);
 });
@@ -70,8 +71,11 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   setTimeout(function() {
     Typed.new('.element2', {
-      strings: [info, info2],
-      typeSpeed: 2
+      strings: [info, info1],
+      startDelay: 2000,
+	  backDelay: 2000,
+	  typeSpeed: 2
+
     });
   }, 8000);
 });
