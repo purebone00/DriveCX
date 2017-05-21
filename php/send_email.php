@@ -166,10 +166,8 @@ if(isset($_POST['cf-submitted'])){
 		global $l_name;
 
 		$api_key = $MailChimpAPI_decoded;
-		echo $MailChimpAPI_decoded;
 	
 		$campaign_id = $MailChimpCampaignId_decoded;
-		echo $MailChimpCampaignId_decoded;
 		$roi = calculate();
 
 		$service_url = 'https://us15.api.mailchimp.com/3.0/campaigns/' . $campaign_id . "/content/";
