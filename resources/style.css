@@ -357,6 +357,9 @@ html {
   h2 {
     margin-bottom: 0px;
   }
+  #disclaimer {
+    margin-bottom: 50px;
+  }
 }
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
@@ -564,14 +567,14 @@ footer {
   color: #f39c12;
 }
 
-#disclaimer{
-	margin-top: 5%;
+#disclaimer {
+  margin-top: 5%;
 }
 
 a:link {
-    color: #FFB142;
+  color: #FFB142;
 }
 
-a:visited { 
-    color: #FFB142;
+a:visited {
+  color: #FFB142;
 }

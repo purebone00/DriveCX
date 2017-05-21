@@ -19,8 +19,8 @@ if(isset($_POST['cf-submitted'])){
 
 	function calculate(){
 		
-        $full_url = 'https://drivecx-4e872.firebaseio.com/full/fullFormula.json';
-		$quick_url = 'https://drivecx-4e872.firebaseio.com/quick/quickFormula.json';
+        $full_url = 'https://driveroicalculator.firebaseio.com/full/fullFormula.json';
+		
 
 		$curlFull = curl_init($full_url);
 		curl_setopt($curlFull, CURLOPT_HTTPHEADER, array(
@@ -47,7 +47,8 @@ if(isset($_POST['cf-submitted'])){
 		if (isset($f_decoded->response->status) && $f_decoded->response->status == 'ERROR') {
 			die('error occured: ' . $f_decoded->response->errormessage);
 		}
-
+		
+		$quick_url = 'https://driveroicalculator.firebaseio.com/quick/quickFormula.json';	
 		$curlQuick = curl_init($quick_url);
 		curl_setopt($curlQuick, CURLOPT_HTTPHEADER, array(
             //'Accept: application/vnd.api+json',
@@ -81,26 +82,31 @@ if(isset($_POST['cf-submitted'])){
 		$avg_check    = $_POST["cf-averageCheck"];
 		$avg_custNo   = $_POST["cf-averageCustNo"];
 	
-	
-	
 		$driveSubCost = 199;
-		$quickRatingPercent = ($fullService ? $f_decoded['full'] : $q_decoded['quick']);
-		$completeSurveyPercent = ($fullService ? $f_decoded['surveyPercentage'] : $q_decoded['surveyPercentage']);
-		$vipPercentile = ($fullService ? $f_decoded['vipPercentage'] : $q_decoded['vipPercentage']);
-		$offersSentPercentile = $q_decoded['offerSent'];
-		$rtrPercentile = ($fullService ? $f_decoded['rtr'] : $q_decoded['rtr']);
-		$vipEngagment = ($fullService) ? $f_decoded['vipEngage'] : $q_decoded['vipEngage']; 
-		$additionVisits = ($fullService ? $f_decoded['addVisits'] : $q_decoded['addVisits']);
-		$avgTableSize = ($fullService ? $f_decoded['tableSize'] : $q_decoded['tableSize']);
-	
+		$quickRatingPercent = ($fullService ? $q_decoded['quick'] : $f_decoded['full']);
+		$completeSurveyPercent = ($fullService ? $q_decoded['surveyPercentage'] : $f_decoded['surveyPercentage']);	
+		$vipPercentile = ($fullService ? $q_decoded['vipPercentage'] : $f_decoded['vipPercentage']);	
+		$offersSentPercentile = $q_decoded['offerSent'];		
+		$rtrPercentile = ($fullService ? $q_decoded['rtr'] : $f_decoded['rtr']);		
+		$vipEngagment = ($fullService) ? $q_decoded['vipEngage'] : $f_decoded['vipEngage']; 		
+		$additionVisits = ($fullService ? $q_decoded['addVisits'] : $f_decoded['addVisits']);
+		$avgTableSize = ($fullService ? $q_decoded['tableSize'] : $f_decoded['tableSize']);
 		$averageSalesWeek = $avg_check * $avg_custNo;
+		
 		$quickRating = ($quickRatingPercent * $avg_custNo) / $avgTableSize;
+		
 		$annualVIPsignups = $quickRating * $vipPercentile * 52;
+		
 		$annualRTRoffers = $quickRating * $completeSurveyPercent * ($fullService ? 1 : $offersSentPercentile) * $rtrPercentile * 52;
+		
 		$additionAnnualSales = ($annualVIPsignups * $avg_check * $avgTableSize * $vipEngagment * $additionVisits);
+		
 		$additionMonthlySales = $additionAnnualSales / 12;
+		
 		$repeatCustomers = $annualVIPsignups * $vipEngagment;
+		
 		$calc = $additionAnnualSales / ($driveSubCost * 12);
+		
 		$roi = ceil ( floatval($calc) );
 	
 		return $roi;
@@ -110,30 +116,61 @@ if(isset($_POST['cf-submitted'])){
 
 	function get_template(){
 	
+		$mailChimpAPI_url = 'https://driveroicalculator.firebaseio.com/keys/mailChimp.json';	
+		$curlMailChimpAPI = curl_init($mailChimpAPI_url);
+		curl_setopt($curlMailChimpAPI, CURLOPT_HTTPHEADER, array(
+            //'Accept: application/vnd.api+json',
+            //'Content-Type: application/vnd.api+json',
+			'Content-Type: application/json',
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => $mailChimpAPI_url
+        ));
+		curl_setopt($curlMailChimpAPI, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($curlMailChimpAPI, CURLOPT_RETURNTRANSFER, true);
+		$curlMailChimpAPI_response = curl_exec($curlMailChimpAPI);
+        
+		//If api call does not succeed display error
+		if ($curlMailChimpAPI_response === false) {
+			$mailChimpAPI_info = curl_getinfo($curlMailChimpAPI);
+			curl_close($curlMailChimpAPI);
+			die('error occured during curl exec. Additioanl info: ' . var_export($mailChimpAPI_info));
+		}
+		curl_close($curlMailChimpAPI);
+
+		$MailChimpAPI_decoded = json_decode($curlMailChimpAPI_response, true);
+
+		$MailChimpCampaignId_url = 'https://driveroicalculator.firebaseio.com/keys/MailChimpCampaignId.json';	
+		$curlMailChimpCampaignId = curl_init($MailChimpCampaignId_url);
+		curl_setopt($curlMailChimpCampaignId, CURLOPT_HTTPHEADER, array(
+            //'Accept: application/vnd.api+json',
+            //'Content-Type: application/vnd.api+json',
+			'Content-Type: application/json',
+            CURLOPT_RETURNTRANSFER => 1,
+            CURLOPT_URL => $MailChimpCampaignId_url
+        ));
+		curl_setopt($curlMailChimpCampaignId, CURLOPT_SSL_VERIFYPEER, true);
+        curl_setopt($curlMailChimpCampaignId, CURLOPT_RETURNTRANSFER, true);
+		$curlMailChimpCampaignId_response = curl_exec($curlMailChimpCampaignId);
+        
+		//If api call does not succeed display error
+		if ($curlMailChimpCampaignId_response === false) {
+			$MailChimpCampaignId_info = curl_getinfo($curlMailChimpCampaignId);
+			curl_close($curlMailChimpCampaignId);
+			die('error occured during curl exec. Additioanl info: ' . var_export($MailChimpCampaignId_info));
+		}
+		curl_close($curlMailChimpCampaignId);
+
+		$MailChimpCampaignId_decoded = json_decode($curlMailChimpCampaignId_response, true);
+
 		global $f_name;
 		global $l_name;
+
+		$api_key = $MailChimpAPI_decoded;
+		echo $MailChimpAPI_decoded;
 	
-		//Input appropriate mailchimp api-key i.e. 2a2aabc6bee455d3a0fa3068b85df27f-us15
-		//$api_key = "2a2aabc6bee455d3a0fa3068b85df27f-us15";
-	
-		//API key for gagachan MailChimp Acct.
-		//$api_key = "2a2aabc6bee455d3a0fa3068b85df27f-us15";
-	
-		$api_key = "8784c7290a9d8bfd5fd33fa348ca02b1-us15";
-	
-		//$template_id = 50631;
-	
-		// campaign_id for gagachan MailChimip Acct.
-		//$campaign_id = '47bdd5bd1e';
-	
-		$campaign_id = 'cf0b2442b5';
-	
+		$campaign_id = $MailChimpCampaignId_decoded;
+		echo $MailChimpCampaignId_decoded;
 		$roi = calculate();
-	
-		//set url for api call
-		//$service_url = 'https://us15.api.mailchimp.com/3.0/templates/' . $template_id . "/";
-		//$service_url = 'https://us15.api.mailchimp.com/3.0/templates/' . $template_id . "/default-content";
-		//$service_url = 'https://us15.api.mailchimp.com/3.0/campaigns/';
 
 		$service_url = 'https://us15.api.mailchimp.com/3.0/campaigns/' . $campaign_id . "/content/";
 
@@ -141,8 +178,6 @@ if(isset($_POST['cf-submitted'])){
 
 		//Set curl header for API call
 		curl_setopt($curl, CURLOPT_HTTPHEADER, array(
-            //'Accept: application/vnd.api+json',
-            //'Content-Type: application/vnd.api+json',
 			'Content-Type: application/json',
             'Authorization: apikey ' . $api_key
 		));

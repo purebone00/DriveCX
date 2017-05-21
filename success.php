@@ -51,7 +51,9 @@
 
 	<div class="container">
 	
-	<div class="class="col-sm-12" style="max-width: 550px; margin: auto;
+	
+	<div class="row">
+                		<div class="class="col-sm-12" style="max-width: 550px; margin: auto;
     width: 50%;">
 	<div class ="row" >
 	 <div class="animated zoomInLeft" style="-webkit-animation-delay: 1s;">
@@ -75,9 +77,7 @@
                         </div>
                     </div>
 	</div>
-	
-	<div class="row">
-                				
+			
                 <div style="margin-bottom:25px; margin-top:-85px; color: #757575;">
                         <div class="card card-container">
                             <img src="resources/images/logo.png" class="img-responsive container" alt=""></img>
