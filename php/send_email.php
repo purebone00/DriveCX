@@ -132,6 +132,11 @@ if(isset($_POST['cf-submitted'])){
 			$html = str_replace("\\t", "\t", $html);
 			$html = str_replace("\\\"", "\"", $html);
 			$html = str_replace("\\u", "&rsquo;s ", $html);
+			
+			$html = str_replace("&rsquo;s 00a9", "&copy;", $html);
+			$html = str_replace("&rsquo;s 00ae", "&#174;", $html);
+			$html = str_replace("2122", "&#8482;", $html);
+			
 			$html = str_replace("*|ROI|*", "$roi", $html);
 			$html = str_replace("*|FNAME|*", $f_name, $html);
 			$html = str_replace("*|LNAME|*", $l_name, $html);
