@@ -13,11 +13,36 @@
 
 if(isset($_POST['cf-submitted'])){
 
+
 	$f_name = $_POST["cf-fName"];
 	$l_name = $_POST["cf-lName"];
-
+	$companyName = $_POST["cf-companyName"];
+	
+	$completeSurveyPercent;
+	$additionAnnualSales;
+	$vipPercentile;
+	$rtrPercentile;
+	$rtrRoi;
+	$rtrAdditionalAnnualSales;
+	$quickRatingPercent;
+	$vipEngagement;
+	$annualVIPsignups;
+	$vipRoi;
 
 	function calculate(){
+		
+		global $completeSurveyPercent;
+		global $additionAnnualSales;
+		global $vipPercentile;
+		global $rtrPercentile;
+		global $rtrRoi;
+		global $rtrAdditionalAnnualSales;
+		global $quickRatingPercent;
+		global $vipEngagement;
+		global $annualVIPsignups;
+		global $vipRoi;
+		
+		
 		
         $full_url = 'https://driveroicalculator.firebaseio.com/full/fullFormula.json';
 		
@@ -88,7 +113,7 @@ if(isset($_POST['cf-submitted'])){
 		$vipPercentile = ($fullService ? $q_decoded['vipPercentage'] : $f_decoded['vipPercentage']);	
 		$offersSentPercentile = $q_decoded['offerSent'];		
 		$rtrPercentile = ($fullService ? $q_decoded['rtr'] : $f_decoded['rtr']);		
-		$vipEngagment = ($fullService) ? $q_decoded['vipEngage'] : $f_decoded['vipEngage']; 		
+		$vipEngagement = ($fullService) ? $q_decoded['vipEngage'] : $f_decoded['vipEngage']; 		
 		$additionVisits = ($fullService ? $q_decoded['addVisits'] : $f_decoded['addVisits']);
 		$avgTableSize = ($fullService ? $q_decoded['tableSize'] : $f_decoded['tableSize']);
 		$averageSalesWeek = $avg_check * $avg_custNo;
@@ -99,21 +124,33 @@ if(isset($_POST['cf-submitted'])){
 		
 		$annualRTRoffers = $quickRating * $completeSurveyPercent * ($fullService ? 1 : $offersSentPercentile) * $rtrPercentile * 52;
 		
-		$additionAnnualSales = ($annualVIPsignups * $avg_check * $avgTableSize * $vipEngagment * $additionVisits);
+		$additionAnnualSales = ($annualVIPsignups * $avg_check * $avgTableSize * $vipEngagement * $additionVisits);
 		
 		$additionMonthlySales = $additionAnnualSales / 12;
 		
-		$repeatCustomers = $annualVIPsignups * $vipEngagment;
+		$completedSurveys = $quickRating * $completeSurveyPercent;
 		
-		$calc = $additionAnnualSales / ($driveSubCost * 12);
+		$rtrOffers = $completedSurveys * $rtrPercentile;
 		
-		$roi = ceil ( floatval($calc) );
-	
+		$annualRedemption = $rtrOffers * 52;
+		
+		$rtrAdditionalAnnualSales = $annualRedemption * $avg_check * $avgTableSize;
+		
+		$totalAdditionalAnnualSales =  $additionAnnualSales + $rtrAdditionalAnnualSales;
+		
+		$repeatCustomers = $annualVIPsignups * $vipEngagement;
+		
+		$vipRoi = round ( floatval($additionAnnualSales / ($driveSubCost * 12)) );
+		
+		$rtrRoi =  round ( floatval($rtrAdditionalAnnualSales / ($driveSubCost * 12)));
+		
+		$roi = $vipRoi + $rtrRoi;
+		
 		return $roi;
 	
 	}
 
-
+	//Gets HTML template from MailChimp Campaign
 	function get_template(){
 	
 		$mailChimpAPI_url = 'https://driveroicalculator.firebaseio.com/keys/mailChimp.json';	
@@ -162,13 +199,29 @@ if(isset($_POST['cf-submitted'])){
 
 		$MailChimpCampaignId_decoded = json_decode($curlMailChimpCampaignId_response, true);
 
-		global $f_name;
-		global $l_name;
 
+		
+		
 		$api_key = $MailChimpAPI_decoded;
 	
 		$campaign_id = $MailChimpCampaignId_decoded;
 		$roi = calculate();
+		
+		global $f_name;
+		global $l_name;
+		global $companyName;
+		
+		global $additionAnnualSales;
+		global $vipPercentile;
+		global $completeSurveyPercent;
+		global $rtrPercentile;
+		global $rtrRoi;
+		global $rtrAdditionalAnnualSales;
+		global $quickRatingPercent;
+		global $annualVIPsignups;
+		global $vipEngagement;
+		global $additionAnnualSales;
+		global $vipRoi;
 
 		$service_url = 'https://us15.api.mailchimp.com/3.0/campaigns/' . $campaign_id . "/content/";
 
@@ -212,22 +265,53 @@ if(isset($_POST['cf-submitted'])){
 
 
 		$html;
+
+		//Identifies HTML of MailChimp Campaign
 		$html_start = strpos($curl_response, '"html":' );
 		$html_end = strpos($curl_response, '</html>') - $html_start - 1;
-
-
+		
+		//Modifies and corrects email template for html coding
 		if( $html_start !== false && $html_end !== false) {
+			
 			$html = substr($curl_response, $html_start + 8, $html_end);
 			$html = str_replace("\\n", "\n", $html);
 			$html = str_replace("\\t", "\t", $html);
 			$html = str_replace("\\\"", "\"", $html);
 			$html = str_replace("\\u", "&rsquo;s ", $html);
+			
+			$html = str_replace("&rsquo;s 00a9", "&copy;", $html);
+			$html = str_replace("&rsquo;s 00ae", "&#174;", $html);
+			$html = str_replace("2122", "&#8482;", $html);
+			
+			
 			$html = str_replace("*|ROI|*", "$roi", $html);
 			$html = str_replace("*|FNAME|*", $f_name, $html);
 			$html = str_replace("*|LNAME|*", $l_name, $html);
+			$html = str_replace("*|COMPLETESURVEY|*", $completeSurveyPercent*100, $html);
+			$html = str_replace("*|RTROFFER|*", $rtrPercentile*100, $html);
+			
+			$html = str_replace("*|RTRANNUALSALES|*", number_format($rtrAdditionalAnnualSales, 0, ".", ",") , $html);
+			$html = str_replace("*|RTRROI|*", $rtrRoi, $html);
+			$html = str_replace("*|QUICKRATEPERCENT|*", $quickRatingPercent*100, $html);
+			
+			//number of new names added to vip list
+			$html = str_replace("*|NEWNAMES|*", round( $annualVIPsignups ), $html);
+			
+			//vip sign up percent
+			$html = str_replace("*|VIPPERCENTILE|*", $vipPercentile*100, $html);
+		
+			//vip engagement percent
+			$html = str_replace("*|VIPENGAGEMENT|*", $vipEngagement*100, $html);
+			
+			//B26 on the google spreadsheet
+			$html = str_replace("*|VIPANNUALSALES|*", number_format($additionAnnualSales, 0, ".", ",") , $html);
+			
+			$html = str_replace("*|VIPROI|*", $vipRoi , $html);
 
+			
 		}
-	
+		
+			
 		return $html;
 		
 	}
@@ -237,9 +321,10 @@ if(isset($_POST['cf-submitted'])){
 
 		global $f_name;
 		global $l_name;
+		global $companyName;
 	
 		$email   = $_POST["cf-email"];
-		$companyName = $_POST["cf-companyName"];
+		
 
 		$name = 'DriveCX';
 		$subject = 'DriveCX ROI Report for ' .  $f_name . " " . $l_name;
@@ -276,7 +361,9 @@ if(isset($_POST['cf-submitted'])){
 		else {	
 	
 		
-		// If email has been process for sending, display a success message
+		
+		
+		// Send Mail, if email has been process for sending, display a success message
 		if ( mail( $to, $subject, $html , $headers) ) {
 			echo '<div>';
 			echo '<p>A copy of your report has been sent to your email address '. $email.'</p>';
@@ -284,11 +371,12 @@ if(isset($_POST['cf-submitted'])){
 		} else {
 			echo 'An unexpected error occurred';
 		}
+		
 	
-		send_deal($email);
+		send_deal($email, $f_name, $l_name, $companyName);
 
 		
-		
+	
 		/**
 	
 		require 'vendor/PHPMailer/PHPMailerAutoload.php';
