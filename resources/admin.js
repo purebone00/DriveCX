@@ -216,7 +216,8 @@ function loadAPIKeys() {
     let pipeDrive, mailChimp, mailchimpCampaignID;
     pipeDrive = snapshot.val().pipeDrive;
     mailChimp = snapshot.val().mailChimp;
-    mailchimpCampaignID = snapshot.val().MailChimpCampaignId;
+    mailchimpCampaignID = snapshot.val().mailchimpCampaignID;
+    console.log(mailchimpCampaignID);
     document.getElementById("mailchimpAPI").value = mailChimp;
     document.getElementById("pipedriveAPI").value = pipeDrive;
     document.getElementById("mailchimpCampaignID").value = mailchimpCampaignID;
@@ -230,7 +231,8 @@ function APISubmit() {
   mailChimp = document.getElementById("mailchimpAPI").value;
   pipeDrive = document.getElementById("pipedriveAPI").value;
   mailchimpCampaignID = document.getElementById("mailchimpCampaignID").value;
-  createAPI(mailChimp, pipeDrive);
+
+  createAPI(mailChimp, pipeDrive, mailchimpCampaignID);
 
   var width = document.getElementById("api_panelBody").offsetWidth;
   document.getElementById("api").style.width = String(width) + "px";
@@ -245,11 +247,12 @@ function APISubmit() {
 
 }
 
-function createAPI(mailChimp, pipeDrive) {
+function createAPI(mailChimp, pipeDrive, mailchimpCampaignID) {
   // 1 Write Entry to DB - Append to end
   var postData = {
     mailChimp: mailChimp,
-    pipeDrive: pipeDrive
+    pipeDrive: pipeDrive,
+    mailchimpCampaignID: mailchimpCampaignID
   };
 
   var updates = {};

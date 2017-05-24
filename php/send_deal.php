@@ -22,10 +22,9 @@ function send_deal($email) {
 		die('error occured during curl exec. Additioanl info: ' . var_export($pipeDriveAPI_info));
 	}
 	curl_close($curlpipeDriveAPI);
-
 	$pipeDriveAPI_decoded = json_decode($curlpipeDriveAPI_response, true);
 
-	$service_url = $pipeDriveAPI_decoded;
+	$service_url = "https://api.pipedrive.com/v1/deals?api_token=" . $pipeDriveAPI_decoded;
 	$curl = curl_init($service_url);
 	$curl_post_data = array(
 			'title' => 'New lead from landing page: '. $email,
