@@ -139,7 +139,7 @@ if(isset($_POST['cf-submitted'])){
 
 		$MailChimpAPI_decoded = json_decode($curlMailChimpAPI_response, true);
 
-		$MailChimpCampaignId_url = 'https://driveroicalculator.firebaseio.com/keys/MailChimpCampaignId.json';	
+		$MailChimpCampaignId_url = 'https://driveroicalculator.firebaseio.com/keys/mailchimpCampaignID.json';	
 		$curlMailChimpCampaignId = curl_init($MailChimpCampaignId_url);
 		curl_setopt($curlMailChimpCampaignId, CURLOPT_HTTPHEADER, array(
             //'Accept: application/vnd.api+json',
