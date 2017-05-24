@@ -3,7 +3,6 @@
 
 package test.admin;
 
-import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -13,7 +12,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -22,7 +20,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class Login {
+public class LoginValid {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -35,14 +33,23 @@ public class Login {
 		System.setProperty("webdriver.chrome.driver", exePath);
 		driver = new ChromeDriver();
 		driver.manage().window().setSize(new Dimension(1366,768));
-    baseUrl = "http://vince.life/vince.life/joe/login.html";
+		baseUrl = "http://vince.life/vince.life/joe/login.html";
   }
 
   @Test
-  public void AverageCheckLargeNumber_test() throws Exception {
+  public void admin_test() throws Exception {
 	
 	  driver.get(baseUrl);
-	  
+
+	  driver.findElement(By.id("email")).clear();
+	  driver.findElement(By.id("email")).sendKeys("admin");
+	  driver.findElement(By.id("email")).clear();
+	  driver.findElement(By.id("email")).sendKeys("admin@admin.com");
+	  driver.findElement(By.id("password")).clear();
+	  driver.findElement(By.id("password")).sendKeys("123456");
+	  driver.findElement(By.id("quickstart-sign-in")).click();
+	
+	  assertEquals("Hello Admin", driver.findElement(By.cssSelector("h1.page-header")).getText());
 
   }
 
