@@ -120,21 +120,29 @@ if(isset($_POST['cf-submitted'])){
 		
 		$quickRating = ($quickRatingPercent * $avg_custNo) / $avgTableSize;
 		
-		$annualVIPsignups = $quickRating * $vipPercentile * 52;
+		$completedSurveys = $quickRating * $completeSurveyPercent;
+		
+		$annualVIPsignups = $fullService ? ($completedSurveys * $vipPercentile * 52) : ($quickRating * $vipPercentile * 52);
 		
 		$annualRTRoffers = $quickRating * $completeSurveyPercent * ($fullService ? 1 : $offersSentPercentile) * $rtrPercentile * 52;
 		
-		$additionAnnualSales = ($annualVIPsignups * $avg_check * $avgTableSize * $vipEngagement * $additionVisits);
+		$addCustomers = $annualVIPsignups * $vipEngagement * $additionVisits;
 		
-		$additionMonthlySales = $additionAnnualSales / 12;
+		$additionAnnualSales =  $fullService ? ($addCustomers * $avg_check * $avgTableSize)  : ($annualVIPsignups * $avg_check * $avgTableSize * $vipEngagement * $additionVisits);
 		
-		$completedSurveys = $quickRating * $completeSurveyPercent;
+		$additionMonthlySales = $additionAnnualSales / 12;		
 		
 		$rtrOffers = $completedSurveys * $rtrPercentile;
 		
 		$annualRedemption = $rtrOffers * 52;
 		
-		$rtrAdditionalAnnualSales = $annualRedemption * $avg_check * $avgTableSize;
+		$offersSent = $completedSurveys * $offersSentPercentile;
+		
+		$rtnToRedeem = $offersSent * $rtrPercentile;
+		
+		$offersRedeemed = $rtnToRedeem * 52;
+		
+		$rtrAdditionalAnnualSales = $fullService ? ($offersRedeemed * $avg_check * $avgTableSize) : ($annualRedemption * $avg_check * $avgTableSize);
 		
 		$totalAdditionalAnnualSales =  $additionAnnualSales + $rtrAdditionalAnnualSales;
 		
@@ -145,6 +153,22 @@ if(isset($_POST['cf-submitted'])){
 		$rtrRoi =  round ( floatval($rtrAdditionalAnnualSales / ($driveSubCost * 12)));
 		
 		$roi = $vipRoi + $rtrRoi;
+		
+		/** Debug Only
+		
+		echo "Is Full Service" . $fullService;
+		
+		echo "annualVIPsignup: " . $annualVIPsignups;
+		
+		echo "vipEngagement: " . $vipEngagement;
+		
+		echo "additional visits: " . $additionVisits;
+		
+		echo "add Customers: " . $addCustomers;
+		
+		echo "additional annual sales: " . $additionAnnualSales;
+		*/
+		
 		
 		return $roi;
 	
@@ -290,7 +314,7 @@ if(isset($_POST['cf-submitted'])){
 			$html = str_replace("*|COMPLETESURVEY|*", $completeSurveyPercent*100, $html);
 			$html = str_replace("*|RTROFFER|*", $rtrPercentile*100, $html);
 			
-			$html = str_replace("*|RTRANNUALSALES|*", number_format($rtrAdditionalAnnualSales, 0, ".", ",") , $html);
+			$html = str_replace("*|RTRANNUALSALES|*", number_format($rtrAdditionalAnnualSales) , $html);
 			$html = str_replace("*|RTRROI|*", $rtrRoi, $html);
 			$html = str_replace("*|QUICKRATEPERCENT|*", $quickRatingPercent*100, $html);
 			
@@ -304,7 +328,7 @@ if(isset($_POST['cf-submitted'])){
 			$html = str_replace("*|VIPENGAGEMENT|*", $vipEngagement*100, $html);
 			
 			//B26 on the google spreadsheet
-			$html = str_replace("*|VIPANNUALSALES|*", number_format($additionAnnualSales, 0, ".", ",") , $html);
+			$html = str_replace("*|VIPANNUALSALES|*", number_format($additionAnnualSales) , $html);
 			
 			$html = str_replace("*|VIPROI|*", $vipRoi , $html);
 
@@ -375,6 +399,7 @@ if(isset($_POST['cf-submitted'])){
 	
 		send_deal($email, $f_name, $l_name, $companyName);
 
+		
 		
 	
 		/**
