@@ -1,0 +1,5 @@
+[23-May-2017 15:08:50 America/New_York] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN), expecting ',' or ';' in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 289
+[23-May-2017 18:18:25 America/New_York] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 31
+[23-May-2017 18:19:13 America/New_York] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 31
+[23-May-2017 18:21:08 America/New_York] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 31
+[23-May-2017 18:21:14 America/New_York] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 31
