@@ -1,15 +1,36 @@
 <?php
 
 //this function sends to pipedrive
-function send_deal($email, $f_name, $l_name, $companyName) {
+function send_deal($email, $f_name, $l_name, $companyName, $titleMessage) {
+	$pipeDriveAPI_url = 'https://driveroicalculator.firebaseio.com/keys/pipeDrive.json';	
+	$curlpipeDriveAPI = curl_init($pipeDriveAPI_url);
+	curl_setopt($curlpipeDriveAPI, CURLOPT_HTTPHEADER, array(
+		//'Accept: application/vnd.api+json',
+		//'Content-Type: application/vnd.api+json',
+		'Content-Type: application/json',
+		CURLOPT_RETURNTRANSFER => 1,
+		CURLOPT_URL => $pipeDriveAPI_url
+	));
+	curl_setopt($curlpipeDriveAPI, CURLOPT_SSL_VERIFYPEER, true);
+	curl_setopt($curlpipeDriveAPI, CURLOPT_RETURNTRANSFER, true);
+	$curlpipeDriveAPI_response = curl_exec($curlpipeDriveAPI);
 	
-	$service_url = 'https://api.pipedrive.com/v1/deals?api_token=ad92c95c3a68f498c69190b4dae80dc522c6c5b4';
+	//If api call does not succeed display error
+	if ($curlpipeDriveAPI_response === false) {
+		$pipeDriveAPI_info = curl_getinfo($curlpipeDriveAPI);
+		curl_close($curlpipeDriveAPI);
+		die('error occured during curl exec. Additioanl info: ' . var_export($pipeDriveAPI_info));
+	}
+	curl_close($curlpipeDriveAPI);
+	$pipeDriveAPI_decoded = json_decode($curlpipeDriveAPI_response, true);
+
+	$service_url = "https://api.pipedrive.com/v1/deals?api_token=" . $pipeDriveAPI_decoded;
 	$curl = curl_init($service_url);
+	
 	$curl_post_data = array(
-			'title' => 'New lead from landing page: '. $email,
+			'title' => $titleMessage . $email,
 			'org_id' => $companyName,
 			'person_id' => $f_name . " " . $l_name
-			
 	);
 	curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 	curl_setopt($curl, CURLOPT_POST, true);
@@ -50,5 +71,7 @@ function send_deal($email, $f_name, $l_name, $companyName) {
 	
 	echo $Dealcurl_response;
 	**/
+
+	
 }
 ?>

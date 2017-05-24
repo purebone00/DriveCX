@@ -9,7 +9,7 @@
 
 body,
 html {
-  padding-top: 0px;
+  padding-top: 2%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.55)), url("./images/restaurant.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -95,9 +95,10 @@ html {
 .card {
   background-color: #F7F7F7;
   /* just in case there no content*/
-  padding: 20px 25px 30px;
+  padding: 0px 0px 0px;
   margin: 0 auto 15px;
   margin-top: 40px;
+  clear: both;
   /* shadows and rounded borders */
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
@@ -354,7 +355,10 @@ html {
     display: none;
   }
   h2 {
-    margin-bottom: 45px;
+    margin-bottom: 0px;
+  }
+  #disclaimer {
+    margin-bottom: 50px;
   }
 }
 
@@ -563,14 +567,14 @@ footer {
   color: #f39c12;
 }
 
-#disclaimer{
-	margin-top: 5%;
+#disclaimer {
+  margin-top: 5%;
 }
 
 a:link {
-    color: #FFB142;
+  color: #FFB142;
 }
 
-a:visited { 
-    color: #FFB142;
+a:visited {
+  color: #FFB142;
 }

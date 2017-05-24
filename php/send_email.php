@@ -19,11 +19,28 @@ if(isset($_POST['cf-submitted'])){
 	$companyName = $_POST["cf-companyName"];
 	
 	$completeSurveyPercent;
+	$additionAnnualSales;
+	$vipPercentile;
+	$rtrPercentile;
+	$rtrRoi;
+	$rtrAdditionalAnnualSales;
+	$quickRatingPercent;
+	$vipEngagement;
+	$annualVIPsignups;
+	$vipRoi;
 
 	function calculate(){
 		
 		global $completeSurveyPercent;
 		global $additionAnnualSales;
+		global $vipPercentile;
+		global $rtrPercentile;
+		global $rtrRoi;
+		global $rtrAdditionalAnnualSales;
+		global $quickRatingPercent;
+		global $vipEngagement;
+		global $annualVIPsignups;
+		global $vipRoi;
 		
         $full_url = 'https://driveroicalculator.firebaseio.com/full/fullFormula.json';
 		
@@ -94,27 +111,62 @@ if(isset($_POST['cf-submitted'])){
 		$vipPercentile = ($fullService ? $q_decoded['vipPercentage'] : $f_decoded['vipPercentage']);	
 		$offersSentPercentile = $q_decoded['offerSent'];		
 		$rtrPercentile = ($fullService ? $q_decoded['rtr'] : $f_decoded['rtr']);		
-		$vipEngagment = ($fullService) ? $q_decoded['vipEngage'] : $f_decoded['vipEngage']; 		
+		$vipEngagement = ($fullService) ? $q_decoded['vipEngage'] : $f_decoded['vipEngage']; 		
 		$additionVisits = ($fullService ? $q_decoded['addVisits'] : $f_decoded['addVisits']);
 		$avgTableSize = ($fullService ? $q_decoded['tableSize'] : $f_decoded['tableSize']);
 		$averageSalesWeek = $avg_check * $avg_custNo;
 		
 		$quickRating = ($quickRatingPercent * $avg_custNo) / $avgTableSize;
 		
-		$annualVIPsignups = $quickRating * $vipPercentile * 52;
+		$completedSurveys = $quickRating * $completeSurveyPercent;
+		
+		$annualVIPsignups = $fullService ? ($completedSurveys * $vipPercentile * 52) : ($quickRating * $vipPercentile * 52);
 		
 		$annualRTRoffers = $quickRating * $completeSurveyPercent * ($fullService ? 1 : $offersSentPercentile) * $rtrPercentile * 52;
 		
-		$additionAnnualSales = ($annualVIPsignups * $avg_check * $avgTableSize * $vipEngagment * $additionVisits);
+		$addCustomers = $annualVIPsignups * $vipEngagement * $additionVisits;
 		
-		$additionMonthlySales = $additionAnnualSales / 12;
+		$additionAnnualSales =  $fullService ? ($addCustomers * $avg_check * $avgTableSize)  : ($annualVIPsignups * $avg_check * $avgTableSize * $vipEngagement * $additionVisits);
 		
-		$repeatCustomers = $annualVIPsignups * $vipEngagment;
+		$additionMonthlySales = $additionAnnualSales / 12;		
 		
-		$calc = $additionAnnualSales / ($driveSubCost * 12);
+		$rtrOffers = $completedSurveys * $rtrPercentile;
 		
-		$roi = ceil ( floatval($calc) );
-	
+		$annualRedemption = $rtrOffers * 52;
+		
+		$offersSent = $completedSurveys * $offersSentPercentile;
+		
+		$rtnToRedeem = $offersSent * $rtrPercentile;
+		
+		$offersRedeemed = $rtnToRedeem * 52;
+		
+		$rtrAdditionalAnnualSales = $fullService ? ($offersRedeemed * $avg_check * $avgTableSize) : ($annualRedemption * $avg_check * $avgTableSize);
+		
+		$totalAdditionalAnnualSales =  $additionAnnualSales + $rtrAdditionalAnnualSales;
+		
+		$repeatCustomers = $annualVIPsignups * $vipEngagement;
+		
+		$vipRoi = round ( floatval($additionAnnualSales / ($driveSubCost * 12)) );
+		
+		$rtrRoi =  round ( floatval($rtrAdditionalAnnualSales / ($driveSubCost * 12)));
+		
+		$roi = $vipRoi + $rtrRoi;
+		
+		/** Debug Only
+		
+		echo "Is Full Service" . $fullService;
+		
+		echo "annualVIPsignup: " . $annualVIPsignups;
+		
+		echo "vipEngagement: " . $vipEngagement;
+		
+		echo "additional visits: " . $additionVisits;
+		
+		echo "add Customers: " . $addCustomers;
+		
+		echo "additional annual sales: " . $additionAnnualSales;
+		*/
+		
 		return $roi;
 	
 	}
@@ -145,7 +197,7 @@ if(isset($_POST['cf-submitted'])){
 
 		$MailChimpAPI_decoded = json_decode($curlMailChimpAPI_response, true);
 
-		$MailChimpCampaignId_url = 'https://driveroicalculator.firebaseio.com/keys/MailChimpCampaignId.json';	
+		$MailChimpCampaignId_url = 'https://driveroicalculator.firebaseio.com/keys/mailchimpCampaignID.json';	
 		$curlMailChimpCampaignId = curl_init($MailChimpCampaignId_url);
 		curl_setopt($curlMailChimpCampaignId, CURLOPT_HTTPHEADER, array(
             //'Accept: application/vnd.api+json',
@@ -179,10 +231,18 @@ if(isset($_POST['cf-submitted'])){
 		global $f_name;
 		global $l_name;
 		global $companyName;
+		
 		global $additionAnnualSales;
-
+		global $vipPercentile;
 		global $completeSurveyPercent;
+		global $rtrPercentile;
+		global $rtrRoi;
+		global $rtrAdditionalAnnualSales;
+		global $quickRatingPercent;
+		global $annualVIPsignups;
+		global $vipEngagement;
 		global $additionAnnualSales;
+		global $vipRoi;
 
 		$service_url = 'https://us15.api.mailchimp.com/3.0/campaigns/' . $campaign_id . "/content/";
 
@@ -248,11 +308,31 @@ if(isset($_POST['cf-submitted'])){
 			$html = str_replace("*|ROI|*", "$roi", $html);
 			$html = str_replace("*|FNAME|*", $f_name, $html);
 			$html = str_replace("*|LNAME|*", $l_name, $html);
-			$html = str_replace("*|COMPLETESURVEY|*", $completeSurveyPercent, $html);
-			$html = str_replace("*|ANNUALSALES|*", $additionAnnualSales, $html);
+			$html = str_replace("*|COMPLETESURVEY|*", $completeSurveyPercent*100, $html);
+			$html = str_replace("*|RTROFFER|*", $rtrPercentile*100, $html);
+			
+			$html = str_replace("*|RTRANNUALSALES|*", number_format($rtrAdditionalAnnualSales) , $html);
+			$html = str_replace("*|RTRROI|*", $rtrRoi, $html);
+			$html = str_replace("*|QUICKRATEPERCENT|*", $quickRatingPercent*100, $html);
+			
+			//number of new names added to vip list
+			$html = str_replace("*|NEWNAMES|*", round( $annualVIPsignups ), $html);
+			
+			//vip sign up percent
+			$html = str_replace("*|VIPPERCENTILE|*", $vipPercentile*100, $html);
+		
+			//vip engagement percent
+			$html = str_replace("*|VIPENGAGEMENT|*", $vipEngagement*100, $html);
+			
+			//B26 on the google spreadsheet
+			$html = str_replace("*|VIPANNUALSALES|*", number_format($additionAnnualSales) , $html);
+			
+			$html = str_replace("*|VIPROI|*", $vipRoi , $html);
 
+			
 		}
-	
+		
+			
 		return $html;
 		
 	}
@@ -266,12 +346,14 @@ if(isset($_POST['cf-submitted'])){
 	
 		$email   = $_POST["cf-email"];
 		
-
+		$fullService = isset($_POST["cf-full-service"]);
+		
 		$name = 'DriveCX';
 		$subject = 'DriveCX ROI Report for ' .  $f_name . " " . $l_name;
 
-	
 		$html = get_template();
+		
+		$titleMessage = $fullService ? "New qs lead from landing page: " : "New fs lead from landing page: ";
 	
 		/**
 		$message = 'average sales per week = ' . $averageSalesWeek . "\r\n";
@@ -302,22 +384,28 @@ if(isset($_POST['cf-submitted'])){
 		else {	
 	
 		
+		
+		
 		// Send Mail, if email has been process for sending, display a success message
 		if ( mail( $to, $subject, $html , $headers) ) {
 			echo '<div>';
 			echo '<p>A copy of your report has been sent to your email address '. $email.'</p>';
 			echo '</div>';
+			
+			send_deal($email, $f_name, $l_name, $companyName, $titleMessage);
+			
 		} else {
 			echo 'An unexpected error occurred';
 		}
 		
 	
-		send_deal($email, $f_name, $l_name, $companyName);
+	
+		
+	
+		
 
 		
-		
 		/**
-	
 		require 'vendor/PHPMailer/PHPMailerAutoload.php';
 		require 'vendor/PHPMailer/class.smtp.php';
 	

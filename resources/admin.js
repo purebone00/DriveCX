@@ -5,7 +5,6 @@ function changePassword() {
 
   var oldPassword, newPassword, newPasswordConfirm;
   oldPassword = document.getElementById("oldPW").value;
-  console.log(oldPassword);
   newPassword = document.getElementById("newPW").value;
   newPasswordConfirm = document.getElementById("newPWConfirm").value;
 
@@ -27,10 +26,32 @@ function changePassword() {
   user.updatePassword(newPassword).then(function() {
     // Update successful.
     console.log("Successful password change.");
+
+    document.getElementById("oldPW").value = "";
+    document.getElementById("newPW").value = "";
+    document.getElementById("newPWConfirm").value = "";
+    document.getElementById("pwError").style.display = 'none';
+
   }, function(error) {
     // An error happened.
+    document.getElementById("pwError").style.display = 'block';
     console.log("Unsuccessful password change.");
   });
+
+  var width = document.getElementById("pw_panelbody").offsetWidth;
+  document.getElementById("pw").style.width = String(width) + "px";
+  var height = document.getElementById("pw_panelbody").offsetHeight;
+  document.getElementById("pw").style.height = String(height) + "px";
+  var margin = document.getElementById("pw_panel-heading").offsetHeight;
+  document.getElementById("pw").style.marginTop = String(margin) + "px";
+
+  document.getElementById("oldPW").value = "";
+  document.getElementById("newPW").value = "";
+  document.getElementById("newPWConfirm").value = "";
+
+  setTimeout(function() {
+    document.getElementById("pw").style.width = "0";
+  }, 1500);
 }
 
 function QuickFormulaSubmit() {
@@ -192,23 +213,26 @@ function createFull(full, surveyPercentage, vipEngage, tableSize, vipPercentage,
 
 function loadAPIKeys() {
   return firebase.database().ref('/keys/').once('value').then(function(snapshot) {
-    let pipeDrive, mailChimp;
+    let pipeDrive, mailChimp, mailchimpCampaignID;
     pipeDrive = snapshot.val().pipeDrive;
     mailChimp = snapshot.val().mailChimp;
-
-    document.getElementById("mailchimpAPI").value = pipeDrive;
-    document.getElementById("pipedriveAPI").value = mailChimp;
+    mailchimpCampaignID = snapshot.val().mailchimpCampaignID;
+    console.log(mailchimpCampaignID);
+    document.getElementById("mailchimpAPI").value = mailChimp;
+    document.getElementById("pipedriveAPI").value = pipeDrive;
+    document.getElementById("mailchimpCampaignID").value = mailchimpCampaignID;
 
   });
 }
 
 function APISubmit() {
-  let mailChimp, pipeDrive;
+  let mailChimp, pipeDrive, mailchimpCampaignID;
 
   mailChimp = document.getElementById("mailchimpAPI").value;
   pipeDrive = document.getElementById("pipedriveAPI").value;
+  mailchimpCampaignID = document.getElementById("mailchimpCampaignID").value;
 
-  createAPI(mailChimp, pipeDrive);
+  createAPI(mailChimp, pipeDrive, mailchimpCampaignID);
 
   var width = document.getElementById("api_panelBody").offsetWidth;
   document.getElementById("api").style.width = String(width) + "px";
@@ -223,11 +247,12 @@ function APISubmit() {
 
 }
 
-function createAPI(mailChimp, pipeDrive) {
+function createAPI(mailChimp, pipeDrive, mailchimpCampaignID) {
   // 1 Write Entry to DB - Append to end
   var postData = {
     mailChimp: mailChimp,
-    pipeDrive: pipeDrive
+    pipeDrive: pipeDrive,
+    mailchimpCampaignID: mailchimpCampaignID
   };
 
   var updates = {};
@@ -271,12 +296,12 @@ function init() {
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyDQ3zo2EQyHwpsLtL3WVH5MvJPWbr2ZcYc",
-    authDomain: "drivecx-4e872.firebaseapp.com",
-    databaseURL: "https://drivecx-4e872.firebaseio.com",
-    projectId: "drivecx-4e872",
-    storageBucket: "drivecx-4e872.appspot.com",
-    messagingSenderId: "987066303919"
+    apiKey: "AIzaSyBlmfw5aA-ps2pVLWWuekiHk0F9Ji0J7ho",
+    authDomain: "driveroicalculator.firebaseapp.com",
+    databaseURL: "https://driveroicalculator.firebaseio.com",
+    projectId: "driveroicalculator",
+    storageBucket: "driveroicalculator.appspot.com",
+    messagingSenderId: "951202623290"
   };
   firebase.initializeApp(config);
 }
