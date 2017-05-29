@@ -1,57 +1,9 @@
-[20-May-2017 14:00:06 America/New_York] PHP Fatal error:  Call to undefined function send_mail() in /home/vincbqah/public_html/vince.life/janice/success.php on line 97
-[23-May-2017 13:33:16 America/New_York] PHP Notice:  Undefined variable: rtrRoi in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 352
-[23-May-2017 13:33:16 America/New_York] PHP Notice:  Undefined variable: vipRoi in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 353
-[23-May-2017 13:33:16 America/New_York] PHP Notice:  Undefined variable: roi in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 354
-[23-May-2017 13:34:16 America/New_York] PHP Notice:  Undefined variable: vipRoi in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 291
-[23-May-2017 17:15:26 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 125
-[23-May-2017 17:15:26 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 17:16:40 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 125
-[23-May-2017 17:16:40 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 17:19:58 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 125
-[23-May-2017 17:19:58 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 17:21:09 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 125
-[23-May-2017 17:21:09 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 17:22:06 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 17:27:08 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 17:27:08 America/New_York] PHP Notice:  Undefined variable: completeSurveyPercent in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 293
-[23-May-2017 17:27:08 America/New_York] PHP Notice:  Undefined variable: rtrPercentile in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 294
-[23-May-2017 17:27:08 America/New_York] PHP Notice:  Undefined variable: rtrAdditionalAnnualSales in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 295
-[23-May-2017 17:27:08 America/New_York] PHP Notice:  Undefined variable: rtrRoi in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 296
-[23-May-2017 17:27:08 America/New_York] PHP Notice:  Undefined variable: quickRatingPercent in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 297
-[23-May-2017 17:27:08 America/New_York] PHP Notice:  Undefined variable: additionalAnnualVisitors in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 298
-[23-May-2017 17:27:08 America/New_York] PHP Notice:  Undefined variable: vipEngagement in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 299
-[23-May-2017 17:27:08 America/New_York] PHP Notice:  Undefined variable: vipPercentile in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 300
-[23-May-2017 17:29:36 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 17:31:43 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 17:54:48 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 18:12:53 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 140
-[23-May-2017 18:17:04 America/New_York] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 31
-[23-May-2017 18:18:26 America/New_York] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 31
-[23-May-2017 18:18:31 America/New_York] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 31
-[23-May-2017 18:19:03 America/New_York] PHP Notice:  Undefined index: cf-fName in /home/vincbqah/public_html/vince.life/janice/success.php on line 42
-[23-May-2017 18:19:03 America/New_York] PHP Notice:  Undefined index: cf-lName in /home/vincbqah/public_html/vince.life/janice/success.php on line 43
-[23-May-2017 18:19:03 America/New_York] PHP Notice:  Undefined index: cf-email in /home/vincbqah/public_html/vince.life/janice/success.php on line 45
-[23-May-2017 18:19:03 America/New_York] PHP Notice:  Undefined index: cf-averageCheck in /home/vincbqah/public_html/vince.life/janice/success.php on line 46
-[23-May-2017 18:19:03 America/New_York] PHP Notice:  Undefined index: cf-averageCustNo in /home/vincbqah/public_html/vince.life/janice/success.php on line 47
-[23-May-2017 18:19:03 America/New_York] PHP Notice:  Undefined index: cf-companyName in /home/vincbqah/public_html/vince.life/janice/success.php on line 48
-[23-May-2017 18:19:03 America/New_York] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 31
-[23-May-2017 18:19:34 America/New_York] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 31
-[23-May-2017 18:21:43 America/New_York] PHP Parse error:  syntax error, unexpected 'function' (T_FUNCTION) in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 31
-[23-May-2017 18:22:17 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 18:24:08 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 18:29:12 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 18:30:43 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 18:32:04 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 18:34:29 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 18:36:51 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 18:40:34 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 139
-[23-May-2017 18:43:25 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 141
-[23-May-2017 18:45:26 America/New_York] PHP Parse error:  syntax error, unexpected '=' in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 290
-[23-May-2017 18:45:39 America/New_York] PHP Parse error:  syntax error, unexpected '=' in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 290
-[23-May-2017 18:45:51 America/New_York] PHP Parse error:  syntax error, unexpected '=' in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 290
-[23-May-2017 18:46:07 America/New_York] PHP Parse error:  syntax error, unexpected '=' in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 290
-[23-May-2017 18:46:52 America/New_York] PHP Parse error:  syntax error, unexpected '=' in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 310
-[23-May-2017 18:47:17 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 141
-[23-May-2017 18:47:29 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 141
-[23-May-2017 18:47:53 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 141
-[23-May-2017 18:48:25 America/New_York] PHP Notice:  Undefined variable: vipEngagment in /home/vincbqah/public_html/vince.life/janice/php/send_email.php on line 141
+[17-May-2017 21:16:13 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/drivecx2017/public_html/roi/test.php on line 8
+[17-May-2017 21:18:49 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/drivecx2017/public_html/roi/test.php on line 8
+[17-May-2017 21:19:15 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/drivecx2017/public_html/roi/test.php on line 8
+[17-May-2017 21:42:35 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/drivecx2017/public_html/roi/test.php on line 8
+[17-May-2017 22:11:35 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/drivecx2017/public_html/roi/test.php on line 8
+[17-May-2017 22:11:35 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/drivecx2017/public_html/roi/test.php on line 8
+[19-May-2017 02:08:41 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/drivecx2017/public_html/roi/test.php on line 8
+[20-May-2017 03:00:01 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/drivecx2017/public_html/roi/test.php on line 8
+[20-May-2017 03:00:28 UTC] PHP Deprecated:  mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead in /home/drivecx2017/public_html/roi/test.php on line 8

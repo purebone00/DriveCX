@@ -2,6 +2,8 @@
 
 //this function sends to pipedrive
 function send_deal($email, $f_name, $l_name, $companyName, $titleMessage) {
+	
+	//This gets the APIKey from firebase
 	$pipeDriveAPI_url = 'https://driveroicalculator.firebaseio.com/keys/pipeDrive.json';	
 	$curlpipeDriveAPI = curl_init($pipeDriveAPI_url);
 	curl_setopt($curlpipeDriveAPI, CURLOPT_HTTPHEADER, array(
@@ -25,6 +27,8 @@ function send_deal($email, $f_name, $l_name, $companyName, $titleMessage) {
 	$pipeDriveAPI_decoded = json_decode($curlpipeDriveAPI_response, true);
 
 	$service_url = "https://api.pipedrive.com/v1/deals?api_token=" . $pipeDriveAPI_decoded;
+	
+	//Starts  api call for pipedrive
 	$curl = curl_init($service_url);
 	
 	$curl_post_data = array(
@@ -50,7 +54,6 @@ function send_deal($email, $f_name, $l_name, $companyName, $titleMessage) {
 
 	
 	//GET ALL DEAL FIELDS OF PIPEDRIVE
-	
 	/**
 	$DealFieldsservice_url = 'https://api.pipedrive.com/v1/dealFields?api_token=ad92c95c3a68f498c69190b4dae80dc522c6c5b4';
 	$Dealcurl = curl_init($DealFieldsservice_url);
@@ -70,7 +73,7 @@ function send_deal($email, $f_name, $l_name, $companyName, $titleMessage) {
 	}
 	
 	echo $Dealcurl_response;
-	**/
+	*/
 
 	
 }

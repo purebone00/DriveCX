@@ -28,6 +28,7 @@ if(isset($_POST['cf-submitted'])){
 	$vipEngagement;
 	$annualVIPsignups;
 	$vipRoi;
+	$annualIncreasePercentile;
 
 	function calculate(){
 		
@@ -41,6 +42,7 @@ if(isset($_POST['cf-submitted'])){
 		global $vipEngagement;
 		global $annualVIPsignups;
 		global $vipRoi;
+		global $annualIncreasePercentile;
 		
         $full_url = 'https://driveroicalculator.firebaseio.com/full/fullFormula.json';
 		
@@ -114,35 +116,39 @@ if(isset($_POST['cf-submitted'])){
 		$vipEngagement = ($fullService) ? $q_decoded['vipEngage'] : $f_decoded['vipEngage']; 		
 		$additionVisits = ($fullService ? $q_decoded['addVisits'] : $f_decoded['addVisits']);
 		$avgTableSize = ($fullService ? $q_decoded['tableSize'] : $f_decoded['tableSize']);
-		$averageSalesWeek = $avg_check * $avg_custNo;
+		$averageSalesWeek = $avg_check * $avg_custNo /  $avgTableSize;
 		
 		$quickRating = ($quickRatingPercent * $avg_custNo) / $avgTableSize;
 		
 		$completedSurveys = $quickRating * $completeSurveyPercent;
 		
-		$annualVIPsignups = $fullService ? ($completedSurveys * $vipPercentile * 52) : ($quickRating * $vipPercentile * 52);
+		$annualVIPsignups = $fullService ? ($completedSurveys * $vipPercentile * 52) : ($completedSurveys * $vipPercentile * 52);
 		
 		$annualRTRoffers = $quickRating * $completeSurveyPercent * ($fullService ? 1 : $offersSentPercentile) * $rtrPercentile * 52;
 		
 		$addCustomers = $annualVIPsignups * $vipEngagement * $additionVisits;
 		
-		$additionAnnualSales =  $fullService ? ($addCustomers * $avg_check * $avgTableSize)  : ($annualVIPsignups * $avg_check * $avgTableSize * $vipEngagement * $additionVisits);
+		$additionAnnualSales =  $fullService ? ($addCustomers * $avg_check * $avgTableSize)  : ($annualVIPsignups * $avg_check * $vipEngagement * $additionVisits);
 		
 		$additionMonthlySales = $additionAnnualSales / 12;		
 		
-		$rtrOffers = $completedSurveys * $rtrPercentile;
+		$offersSent = $completedSurveys * $offersSentPercentile;
+		
+		$rtrOffers = $offersSent * $rtrPercentile;
 		
 		$annualRedemption = $rtrOffers * 52;
-		
-		$offersSent = $completedSurveys * $offersSentPercentile;
 		
 		$rtnToRedeem = $offersSent * $rtrPercentile;
 		
 		$offersRedeemed = $rtnToRedeem * 52;
 		
-		$rtrAdditionalAnnualSales = $fullService ? ($offersRedeemed * $avg_check * $avgTableSize) : ($annualRedemption * $avg_check * $avgTableSize);
+		$rtrAdditionalAnnualSales = $fullService ? ($offersRedeemed * $avg_check * $avgTableSize) : ($annualRedemption * $avg_check);
 		
 		$totalAdditionalAnnualSales =  $additionAnnualSales + $rtrAdditionalAnnualSales;
+		
+		$estimatedAnnualSales = $averageSalesWeek * 52;
+		
+		$annualIncreasePercentile =  $totalAdditionalAnnualSales / $estimatedAnnualSales;
 		
 		$repeatCustomers = $annualVIPsignups * $vipEngagement;
 		
@@ -152,19 +158,37 @@ if(isset($_POST['cf-submitted'])){
 		
 		$roi = $vipRoi + $rtrRoi;
 		
-		/** Debug Only
 		
-		echo "Is Full Service" . $fullService;
 		
-		echo "annualVIPsignup: " . $annualVIPsignups;
+		//Debug only
 		
-		echo "vipEngagement: " . $vipEngagement;
+		/**
 		
-		echo "additional visits: " . $additionVisits;
+		echo "<br>Is Full Service" . $fullService;
 		
-		echo "add Customers: " . $addCustomers;
+		echo "<br>annualVIPsignup: " . $annualVIPsignups;
 		
-		echo "additional annual sales: " . $additionAnnualSales;
+		echo "<br>vipEngagement: " . $vipEngagement;
+		
+		echo "<br>additional visits: " . $additionVisits;
+		
+		echo "<br>add Customers: " . $addCustomers;
+		
+		echo "<br>additional annual sales: " . $additionAnnualSales;
+		
+		echo "<br>completed surveys: " . $completedSurveys;
+		
+		echo "<br>offers sent" . $offersSent;
+		
+		echo "<br>rtrOffer" . $rtrOffers;
+		
+		echo "<br>annualRedemption: " . $annualRedemption;
+		
+		echo "<br>totalAdditionalAnnualsales: " . $totalAdditionalAnnualSales ;
+		
+		echo "<br>estimated Annual Sales: " . $estimatedAnnualSales;
+		
+		echo "<br>averages Sales per week: " . $averageSalesWeek;
 		*/
 		
 		return $roi;
@@ -243,8 +267,13 @@ if(isset($_POST['cf-submitted'])){
 		global $vipEngagement;
 		global $additionAnnualSales;
 		global $vipRoi;
+		global $annualIncreasePercentile;
 
-		$service_url = 'https://us15.api.mailchimp.com/3.0/campaigns/' . $campaign_id . "/content/";
+		//us15 for demo2017dcx
+		//$service_url = 'https://us15.api.mailchimp.com/3.0/campaigns/' . $campaign_id . "/content/";
+		
+		//the is is the API entry point
+		$service_url = 'https://us11.api.mailchimp.com/3.0/campaigns/' . $campaign_id . "/content/";
 
 		$curl = curl_init($service_url);
 
@@ -327,7 +356,7 @@ if(isset($_POST['cf-submitted'])){
 			//B26 on the google spreadsheet
 			$html = str_replace("*|VIPANNUALSALES|*", number_format($additionAnnualSales) , $html);
 			
-			$html = str_replace("*|VIPROI|*", $vipRoi , $html);
+			$html = str_replace("*|ANNUALINCREASEPERCENT|*", number_format($annualIncreasePercentile*100, 2) , $html);
 
 			
 		}
@@ -397,13 +426,6 @@ if(isset($_POST['cf-submitted'])){
 		} else {
 			echo 'An unexpected error occurred';
 		}
-		
-	
-	
-		
-	
-		
-
 		
 		/**
 		require 'vendor/PHPMailer/PHPMailerAutoload.php';
