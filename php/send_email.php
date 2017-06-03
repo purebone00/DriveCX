@@ -382,7 +382,7 @@ if(isset($_POST['cf-submitted'])){
 
 		$html = get_template();
 		
-		$titleMessage = $fullService ? "New qs lead from landing page: " : "New fs lead from landing page: ";
+		$titleMessage = $fullService ? "Q.S. lead from ROI Page: " : "F.S. lead from ROI Page: ";
 	
 		/**
 		$message = 'average sales per week = ' . $averageSalesWeek . "\r\n";
